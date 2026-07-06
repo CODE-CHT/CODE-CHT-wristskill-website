@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="WristSkill Labs assistant chat widget">
+  <rect width="640" height="400" fill="#FAF8F3"/>
+  <!-- chat panel -->
+  <rect x="120" y="28" width="400" height="344" rx="18" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="148" y="62" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="12" fill="#8A96A3">AI assistant — may be inaccurate</text>
+  <!-- bot bubble -->
+  <rect x="148" y="80" width="290" height="88" rx="14" fill="#F4F6F9"/>
+  <text x="164" y="106" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="13" fill="#3F4E5C">I'm a WristSkill Labs product myself —</text>
+  <text x="164" y="126" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="13" fill="#3F4E5C">an assistant that runs entirely on your</text>
+  <text x="164" y="146" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="13" fill="#3F4E5C">device. Ask me about our work.</text>
+  <!-- user bubble -->
+  <rect x="268" y="184" width="224" height="40" rx="14" fill="#0A8580"/>
+  <text x="286" y="209" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="13" fill="#FFFFFF">Can you build one for my site?</text>
+  <!-- bot typing dots -->
+  <rect x="148" y="240" width="72" height="36" rx="14" fill="#F4F6F9"/>
+  <circle cx="172" cy="258" r="4" fill="#8A96A3"/>
+  <circle cx="184" cy="254" r="4" fill="#8A96A3"/>
+  <circle cx="196" cy="258" r="4" fill="#8A96A3"/>
+  <!-- input row -->
+  <rect x="148" y="300" width="270" height="42" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="164" y="326" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="13" fill="#8A96A3">Ask about WristSkill Labs…</text>
+  <rect x="428" y="300" width="64" height="42" rx="10" fill="#0A8580"/>
+  <text x="443" y="326" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">Send</text>
+</svg>
