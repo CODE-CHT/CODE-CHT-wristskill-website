@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frozen Fortune — run your own ice-cream truck</title>
+  <meta name="description" content="A free business game for kids 8–14. Run an ice-cream truck for one summer: real weather, real money, your decisions. Plays in the browser on phones, tablets, and Chromebooks.">
+  <link rel="canonical" href="https://wristskill.com/frozen-fortune">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Frozen Fortune — run your own ice-cream truck">
+  <meta property="og:description" content="Real weather. Real money. Your decisions. A free business game for kids 8–14 — plays right in the browser.">
+  <meta property="og:url" content="https://wristskill.com/frozen-fortune">
+  <meta property="og:image" content="https://wristskill.com/frozen-fortune/card.png">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="play/index.icon.png">
+  <link rel="apple-touch-icon" href="play/index.apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #fff6dd;   /* the game's own page color */
+      --card:  #fffdf4;
+      --ink:   #2f3439;
+      --soft:  #6d6455;
+      --rosa:  #c22f3e;
+      --amber: #d9a441;
+      --teal:  #1f9e8e;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { background: var(--cream); }
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--ink);
+      line-height: 1.55;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Parlor awning */
+    .awning {
+      height: 18px;
+      background: repeating-linear-gradient(90deg,
+        var(--rosa) 0 44px, var(--cream) 44px 88px);
+      border-bottom: 3px solid var(--ink);
+    }
+
+    main {
+      width: min(660px, 92vw);
+      margin: 0 auto;
+      flex: 1;
+    }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      padding: 44px 0 8px;
+    }
+    .hero-words { flex: 1; }
+    .hero img {
+      width: clamp(120px, 22vw, 176px);
+      height: auto;
+      flex-shrink: 0;
+    }
+    h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2.6rem, 8vw, 3.6rem);
+      line-height: 1.02;
+      color: var(--rosa);
+      text-wrap: balance;
+    }
+    .tagline {
+      font-size: clamp(1.1rem, 3.4vw, 1.3rem);
+      font-weight: 700;
+      margin-top: 12px;
+    }
+    .pitch {
+      color: var(--soft);
+      margin-top: 8px;
+      font-size: 0.98rem;
+    }
+
+    /* The one thing to do */
+    .play-wrap { padding: 26px 0 6px; text-align: center; }
+    .play-btn {
+      display: block;
+      width: 100%;
+      padding: 20px 24px;
+      background: var(--amber);
+      color: var(--ink);
+      border: 3px solid var(--ink);
+      border-radius: 16px;
+      box-shadow: 0 5px 0 var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(1.25rem, 4.5vw, 1.55rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: transform 0.08s ease, box-shadow 0.08s ease;
+    }
+    .play-btn:hover { transform: translateY(2px); box-shadow: 0 3px 0 var(--ink); }
+    .play-btn:active { transform: translateY(5px); box-shadow: 0 0 0 var(--ink); }
+    .play-btn:focus-visible { outline: 4px solid var(--teal); outline-offset: 3px; }
+    .play-note {
+      margin-top: 14px;
+      color: var(--soft);
+      font-size: 0.92rem;
+    }
+
+    /* Grown-ups card */
+    .grownups {
+      background: var(--card);
+      border: 2px solid #e5d9b8;
+      border-radius: 16px;
+      padding: 26px 28px;
+      margin: 34px 0 8px;
+    }
+    .grownups h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-weight: 400;
+      font-size: 1.55rem;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+    .grownups ul { list-style: none; display: grid; gap: 12px; }
+    .grownups li { padding-left: 22px; position: relative; font-size: 0.96rem; }
+    .grownups li::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0.42em;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+    .grownups strong { color: var(--ink); }
+    .grownups li, .grownups li span { color: var(--soft); }
+
+    footer {
+      margin-top: 40px;
+      border-top: 3px solid var(--ink);
+      background: var(--card);
+      padding: 22px 0 30px;
+    }
+    .foot-inner {
+      width: min(660px, 92vw);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 24px;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: var(--soft);
+    }
+    footer a { color: var(--teal); font-weight: 500; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    footer a:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+
+    @media (max-width: 520px) {
+      .hero { flex-direction: column-reverse; text-align: center; padding-top: 30px; }
+      .hero img { width: clamp(120px, 34vw, 150px); }
+      .foot-inner { flex-direction: column; text-align: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .play-btn { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="awning" aria-hidden="true"></div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-words">
+        <h1>Frozen Fortune</h1>
+        <p class="tagline">Run your own ice-cream truck for one summer.</p>
+        <p class="pitch">Real weather. Real money. Your decisions. A business game
+        for kids 8–14, inspired by the classic 1990s classroom business sims.</p>
+      </div>
+      <img src="rosa.png" alt="Grandma Rosa — a smiling strawberry-sundae grandmother with glasses, a silver bun, and a cherry on top" width="400" height="747">
+    </section>
+
+    <div class="play-wrap">
+      <a class="play-btn" href="play/">PLAY FROZEN FORTUNE</a>
+      <p class="play-note">Free · plays right in your browser · best in landscape</p>
+    </div>
+
+    <section class="grownups">
+      <h2>For grown-ups</h2>
+      <ul>
+        <li><span><strong>Nothing to sign up for, nothing collected.</strong>
+          No ads, no accounts, no tracking — progress saves only on this device.</span></li>
+        <li><span><strong>Works where kids are.</strong> Phones and tablets in
+          landscape, plus laptops and Chromebooks — any modern browser.</span></li>
+        <li><span><strong>The math is real.</strong> Costs, prices, weather, and
+          profit add up honestly — and a bad day is a lesson, never a punishment.</span></li>
+        <li><span><strong>Keep it like an app.</strong> Open the game, then choose
+          <em>Add to Home Screen</em> in your browser's share menu — it installs
+          with its own icon and works offline.</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-inner">
+      <p>Made by <a href="https://wristskill.com">WristSkill Labs</a></p>
+      <p>Spotted a bug or have an idea?
+        <a href="mailto:wristskillapp@gmail.com?subject=Frozen%20Fortune%20feedback">wristskillapp@gmail.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>
