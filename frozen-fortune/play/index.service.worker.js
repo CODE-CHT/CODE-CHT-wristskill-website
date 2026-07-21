@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1784647448|2818785';
+const CACHE_VERSION = '1784648889|3148822';
 /** @type {string} */
 const CACHE_PREFIX = 'Frozen Fortune-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
