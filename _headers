@@ -1,0 +1,14 @@
+# Netlify custom headers.
+#
+# Keep the playable build out of search results until launch (WRI-184).
+#
+# X-Robots-Tag rather than a robots.txt Disallow, on purpose: a disallowed URL
+# can still be indexed when something links to it, and blocking the crawl stops
+# Google ever seeing a noindex. The header is fetched with the page, so it
+# actually works. It also survives a Godot re-export, which regenerates
+# play/index.html and would silently wipe a <meta name="robots"> tag.
+#
+# The landing page at /frozen-fortune/ is deliberately NOT covered — that one
+# is marketing and should be found.
+/frozen-fortune/play/*
+  X-Robots-Tag: noindex, nofollow
