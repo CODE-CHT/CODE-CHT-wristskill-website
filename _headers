@@ -12,3 +12,11 @@
 # is marketing and should be found.
 /frozen-fortune/play/*
   X-Robots-Tag: noindex, nofollow
+
+# The game's service worker must never come from cache. Godot's shell
+# registers this exact file, so it is the only door a new build can reach a
+# returning player through — a cached one serves them the old game forever.
+# Every local playtest this week needed a brand-new port for exactly this
+# reason, and a stale worker in production is a deploy nobody can see.
+/frozen-fortune/play/index.service.worker.js
+  Cache-Control: public, max-age=0, must-revalidate
