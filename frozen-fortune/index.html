@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Frozen Fortune — run your own ice-cream truck</title>
-  <meta name="description" content="A free business game for kids 8–14. Run an ice-cream truck for one summer: real weather, real money, your decisions. Plays in the browser on phones, tablets, and Chromebooks.">
+  <meta name="description" content="A business game for kids 8–14 with a free route to run every day. Real weather, real money, your decisions — and a full-summer mode for families who want more. Plays in the browser on phones, tablets, and Chromebooks.">
   <link rel="canonical" href="https://wristskill.com/frozen-fortune">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Frozen Fortune — run your own ice-cream truck">
-  <meta property="og:description" content="Real weather. Real money. Your decisions. A free business game for kids 8–14 — plays right in the browser.">
+  <meta property="og:description" content="Real weather. Real money. Your decisions. A business game for kids 8–14 with a free route every day — plays right in the browser.">
   <meta property="og:url" content="https://wristskill.com/frozen-fortune">
   <meta property="og:image" content="https://wristskill.com/frozen-fortune/card.png">
   <meta name="twitter:card" content="summary">
@@ -142,6 +142,9 @@
     }
     .grownups strong { color: var(--ink); }
     .grownups li, .grownups li span { color: var(--soft); }
+    .grownups a { color: var(--teal); font-weight: 500; text-decoration: none; }
+    .grownups a:hover { text-decoration: underline; }
+    .grownups a:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
 
     footer {
       margin-top: 40px;
@@ -189,15 +192,25 @@
 
     <div class="play-wrap">
       <a class="play-btn" href="play/">PLAY FROZEN FORTUNE</a>
-      <p class="play-note">Free · plays right in your browser · best in landscape<br>
+      <p class="play-note">Today's Route is free, every day · plays right in your browser · best in landscape<br>
       On iPhone: <em>Add to Home Screen</em> for the full-screen view</p>
     </div>
 
     <section class="grownups">
       <h2>For grown-ups</h2>
       <ul>
+        <li><span><strong>What's free, and what isn't.</strong> Today's Route —
+          a fresh daily challenge, the same day for everyone playing — is free,
+          every day, no strings. New players also get one free practice weekend
+          (a short 3-day route). The full summer — the 14- and 28-day routes —
+          is a one-time unlock:
+          <!-- TODO(WRI-273): real Lemon Squeezy product URL before this page ships -->
+          <a href="#">buy a code</a>, type it into the game once, and it works
+          forever, even offline. No subscription, and never a price or a
+          checkout on the kid's screen — the game tells them to ask a grown-up.</span></li>
         <li><span><strong>Nothing to sign up for, nothing collected.</strong>
-          No ads, no accounts, no tracking — progress saves only on this device.</span></li>
+          No ads, no accounts, no tracking — progress saves only on this device.
+          Checkout happens on our store page, never inside the game.</span></li>
         <li><span><strong>Progress stays in this browser.</strong> The summer
           saves itself after every day, in this browser on this device — there
           is no account and no copy anywhere to restore from. Clearing your
