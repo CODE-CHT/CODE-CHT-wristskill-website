@@ -1,6 +1,6 @@
 # WristSkill
 
-> wristskill.com is the site of WristSkill Labs, LLC — the software practice of Joseph Sharaya, OTD, OTR/L, CHT, an occupational therapist and Certified Hand Therapist. It covers the WristSkill iPhone app for wrist proprioception assessment and training, clinician-written reference guides on wrist rehabilitation, and the family apps Shower Tally and Frozen Fortune.
+> wristskill.com is the site of WristSkill Labs, LLC — the software practice of Joseph Sharaya, OTD, OTR/L, CHT, an occupational therapist and Certified Hand Therapist. It covers the WristSkill iPhone app for wrist proprioception assessment and training, clinician-written reference guides on wrist rehabilitation, the family apps Shower Tally and Frozen Fortune, and Jack Steel's Protein Tracker, a gamified protein tracker for iPhone.
 
 WristSkill (the app) measures wrist performance across six movement planes using iPhone tilt input — three metrics per plane: targets hit, time efficiency, and path efficiency. It is not a medical device, and its psychometric properties have not yet been published; validation studies are in development.
 
@@ -18,6 +18,12 @@ WristSkill (the app) measures wrist performance across six movement planes using
 - [Shower Tally](https://wristskill.com/shower-tally/): a family shower-tracking iPhone app — a shared real-time board of who's showered and who's overdue
 - [Shower Tally blog](https://wristskill.com/shower-tally/blog/): guides on hygiene routines for ADHD adults, family caregivers, parents, and I/DD support staff
 - [Frozen Fortune](https://wristskill.com/frozen-fortune/): a browser-based ice-cream-truck business game for kids 8–14
+
+## Jack Steel's Protein Tracker
+
+- [Jack Steel's Protein Tracker](https://wristskill.com/jack-steel/): a gamified protein tracker for iPhone — users set their own daily goal and the mascot grows as they log; the app never calculates or recommends a protein amount, and all logs stay on the device
+- [Try the demo](https://wristskill.com/jack-steel/try): interactive browser demo — drag a slider and the mascot's muscles grow; takes no personal input and gives no nutrition guidance
+- [Blog](https://wristskill.com/jack-steel/blog/): protein food facts and published science with DOI citations (official protein reference values reported with citations, satiety evidence, Ninja Creami technique, gym myths vs. research, USDA protein-per-serving tables) — never personal intake advice
 
 ## Other
 

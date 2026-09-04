@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Try Jack Steel — feed him protein, watch him grow</title>
+  <meta name="description" content="Drag the slider and watch Jack Steel's muscles grow. A ten-second taste of the gamified protein tracker for iPhone — no sign-up, nothing saved." />
+  <link rel="canonical" href="https://wristskill.com/jack-steel/try" />
+
+  <meta property="og:title" content="Feed him protein. Watch him grow." />
+  <meta property="og:description" content="Drag the slider, watch Jack Steel grow. A ten-second taste of the protein tracker for iPhone." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wristskill.com/jack-steel/try" />
+  <meta property="og:image" content="https://wristskill.com/jack-steel/assets/share-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Jack Steel's Protein Tracker — the mascot Jack Steel flexing beside the app's title lockup." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Feed him protein. Watch him grow." />
+  <meta name="twitter:description" content="Drag the slider, watch Jack Steel grow. A ten-second taste of the protein tracker for iPhone." />
+  <meta name="twitter:image" content="https://wristskill.com/jack-steel/assets/share-card.jpg" />
+  <meta name="theme-color" content="#121212" />
+  <meta name="apple-itunes-app" content="app-id=6799971985" />
+
+  <link rel="icon" type="image/png" href="/jack-steel/assets/icon.png" />
+  <link rel="apple-touch-icon" href="/jack-steel/assets/icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/jack-steel/steel.css" />
+
+  <style>
+    .hero-min { text-align: center; padding: 26px 0 8px; }
+    .hero-min h1 { font-family: var(--display); text-transform: uppercase; font-weight: 400; font-size: clamp(2rem, 5.5vw, 3rem); line-height: 1.06; margin: 12px auto 8px; }
+    .hero-min .lede { color: var(--dim); max-width: 44ch; margin: 0 auto; }
+
+    .demo { max-width: 520px; margin: 0 auto; }
+
+    /* The stage: flag backdrop behind him, forge vignette, mascot on top. */
+    .stage {
+      position: relative; border-radius: 22px; overflow: hidden;
+      border: 1px solid var(--line);
+      background: #121212 url('/jack-steel/assets/flag.png') center / cover no-repeat;
+      aspect-ratio: 10 / 11;
+    }
+    .stage::after { /* vignette so the placeholder pops on the flag */
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 75% 62% at 50% 46%, rgba(18,18,18,0) 55%, rgba(18,18,18,0.55) 100%);
+      pointer-events: none;
+    }
+    .stage svg { position: absolute; inset: 0; width: 100%; height: 100%; filter: drop-shadow(0 14px 22px rgba(0,0,0,0.45)); }
+    .stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: none; }
+    .stage.gl-on canvas { display: block; }
+    .stage.gl-on svg { display: none; }
+    .stage.gl-on { background: #121212; } /* shader paints the flag itself */
+
+    /* Inflate: one drive value --t (0..1) on the stage; each named layer group
+       applies it through its own gain. Today the art is one whole-body layer;
+       commissioned layered art later splits it into per-muscle groups with
+       their own gains — the drive logic doesn't change. */
+    .muscle {
+      transform-box: fill-box; transform-origin: 50% 100%;
+      transition: transform 240ms cubic-bezier(0.34, 1.3, 0.5, 1);
+    }
+    #mascot { /* feet stay planted; width-biased so it reads as pump, not zoom */
+      transform: scale(calc(1 + var(--t, 0) * 0.20), calc(1 + var(--t, 0) * 0.13));
+    }
+    @media (prefers-reduced-motion: reduce) { .muscle { transition: none; } }
+
+    /* Molten-gold fill (app's signature, whole-body web approximation):
+       tint keeps the muscle shading via color blend; the meniscus line is
+       the bright waterline. Geometry animates via CSS y/height. */
+    #gold { opacity: 0; transition: opacity 240ms ease; }
+    #gold.on { opacity: 1; }
+    #gold-tint { mix-blend-mode: color; opacity: 0.85; }
+    #gold-line { opacity: 0.95; }
+    .fill-part { transition: y 240ms cubic-bezier(0.34, 1.3, 0.5, 1), height 240ms cubic-bezier(0.34, 1.3, 0.5, 1); }
+    @media (prefers-reduced-motion: reduce) { .fill-part, #gold { transition: none; } }
+
+    /* Idle breath — composes with the inflate (separate element). Feet stay
+       planted; slightly Y-biased so it reads chest-led like the app's. */
+    .breath { transform-box: fill-box; transform-origin: 50% 100%; animation: breathe 4s ease-in-out infinite; }
+    @keyframes breathe { 50% { transform: scale(1.01, 1.014); } }
+    @media (prefers-reduced-motion: reduce) { .breath { animation: none; } }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-min { animation: settle 0.45s cubic-bezier(0.22, 1, 0.36, 1) backwards; }
+      .demo { animation: settle 0.45s cubic-bezier(0.22, 1, 0.36, 1) 120ms backwards; }
+    }
+
+    .feed-label { display: block; text-align: center; font-weight: 700; color: var(--ink); margin: 22px 0 14px; }
+
+    .controls { display: flex; align-items: center; gap: 14px; }
+
+    /* Pump-slider — anatomy mirrors the app's (App.tsx sliderTrack/Fill/Val/
+       Thumb): 58px wrap, well track w/ 1.5px border r16, dim-green fill,
+       value INSIDE the track, 18px pill thumb with a grip stripe. */
+    .pump { position: relative; flex: 1; min-width: 0; height: 58px; }
+    .pump input[type="range"] {
+      -webkit-appearance: none; appearance: none;
+      display: block; width: 100%; height: 58px; margin: 0;
+      background: transparent; cursor: pointer;
+    }
+    .pump input[type="range"]::-webkit-slider-runnable-track {
+      height: 58px; border-radius: 16px; border: 1.5px solid var(--line2);
+      background: linear-gradient(to right, #1e3a17 calc(var(--pct, 0) * 1%), var(--well) calc(var(--pct, 0) * 1%));
+    }
+    .pump input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 18px; height: 46px; border-radius: 9px;
+      margin-top: 4.5px;
+      background: var(--green) linear-gradient(90deg, transparent calc(50% - 1.25px), rgba(10, 10, 10, 0.55) calc(50% - 1.25px), rgba(10, 10, 10, 0.55) calc(50% + 1.25px), transparent calc(50% + 1.25px));
+      border: 1.5px solid #0a0a0a;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+      transition: transform 0.12s ease;
+    }
+    .pump input[type="range"]:active::-webkit-slider-thumb { transform: scale(0.94); }
+    .pump input[type="range"]::-moz-range-track {
+      height: 58px; border-radius: 16px; border: 1.5px solid var(--line2); background: var(--well);
+    }
+    .pump input[type="range"]::-moz-range-progress { height: 58px; border-radius: 16px; background: #1e3a17; }
+    .pump input[type="range"]::-moz-range-thumb {
+      width: 18px; height: 46px; border-radius: 9px;
+      background: var(--green); border: 1.5px solid #0a0a0a;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+      transition: transform 0.12s ease;
+    }
+    .pump input[type="range"]:active::-moz-range-thumb { transform: scale(0.94); }
+    .pump input[type="range"]:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; border-radius: 16px; }
+    .pump .readout {
+      position: absolute; inset: 0; display: grid; place-items: center;
+      pointer-events: none;
+      font-family: var(--display); font-size: 24px; color: var(--green); letter-spacing: 1px;
+    }
+    .pump .readout.is-hint { font-family: var(--body); font-size: 16px; font-weight: 700; color: var(--dim); letter-spacing: 0; }
+    input[type="range"]:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; border-radius: 999px; }
+
+    .num-wrap { display: flex; align-items: baseline; gap: 6px; color: var(--dim); font-weight: 700; }
+    input[type="number"] {
+      width: 78px; background: var(--well); border: 1px solid var(--line2); border-radius: 10px;
+      color: var(--ink); font-size: 1.15rem; font-family: var(--display); padding: 8px 10px; text-align: center;
+    }
+    input[type="number"]:focus-visible { outline: 2px solid var(--green); outline-offset: 1px; border-color: transparent; }
+
+    .pitch { text-align: center; padding: 40px 0 10px; }
+    .pitch p { color: var(--dim); max-width: 52ch; margin: 0 auto 22px; }
+    .pitch p strong { color: var(--ink); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="/jack-steel/"><img src="/jack-steel/assets/icon.png" alt="" width="256" height="256" /><span>Jack&nbsp;Steel</span></a>
+      <div class="nav-links">
+        <a href="/jack-steel/">About the app</a>
+        <a class="btn small app-store" data-place="nav" href="https://apps.apple.com/app/id6799971985">App&nbsp;Store</a>
+      </div>
+    </nav>
+
+    <header class="hero-min">
+      <p class="kicker">The 10-second demo · no sign-up · nothing saved</p>
+      <h1>Feed him protein.<br />Watch him grow.</h1>
+    </header>
+
+    <main>
+      <section class="demo" style="padding: 18px 0 0;">
+        <div class="stage" id="stage" aria-hidden="true">
+          <!-- The app's actual renderer: mascot-core.js is the app's mascot.ts
+               (muscle geometry + the shipped GLSL) bundled verbatim; the canvas
+               runs the same fragment shader — per-muscle bulge, molten-gold
+               fill with the rippling meniscus, waving flag. The SVG below is
+               the no-WebGL fallback only. -->
+          <canvas id="gl-stage"></canvas>
+          <svg id="svg-stage" viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" role="img">
+            <defs>
+              <!-- Alpha mask of the art itself: the gold fill can only paint
+                   where Jack's pixels are, like the app's bodyMask. -->
+              <mask id="body-mask" style="mask-type: alpha;">
+                <image href="/jack-steel/assets/mascot.png" x="75.5" y="86" width="249" height="384" />
+              </mask>
+              <filter id="line-blur"><feGaussianBlur stdDeviation="3" /></filter>
+            </defs>
+            <g id="mascot" class="muscle">
+              <g class="breath">
+                <image href="/jack-steel/assets/mascot.png" x="75.5" y="86" width="249" height="384" />
+                <!-- Molten-gold fill: rises with grams (linear, like the app's
+                     daily fill), meniscus line at the waterline. Shin start,
+                     collar max — head and shoes never painted. -->
+                <g id="gold" mask="url(#body-mask)">
+                  <rect id="gold-tint-lo" class="fill-part" x="75.5" y="442" width="249" height="0" fill="#E5A930" />
+                  <rect id="gold-tint-hi" class="fill-part" x="75.5" y="316" width="249" height="0" fill="#E5A930" />
+                  <rect id="gold-glow" class="fill-part" x="75.5" y="435" width="249" height="10" fill="#FFE08A" filter="url(#line-blur)" />
+                  <rect id="gold-line" class="fill-part" x="75.5" y="437" width="249" height="6" fill="#FFE08A" />
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <label class="feed-label" for="grams">Protein today</label>
+        <div class="controls">
+          <div class="pump">
+            <input type="range" id="grams" min="0" max="200" step="5" value="0"
+                   aria-valuetext="0 grams" />
+            <output class="readout is-hint" id="readout" for="grams" aria-hidden="true">slide to pump&nbsp; ⇢</output>
+          </div>
+          <div class="num-wrap">
+            <input type="number" id="grams-num" min="0" max="200" step="5" value="0"
+                   aria-label="Protein today in grams" inputmode="numeric" />
+            <span aria-hidden="true">g</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="pitch" id="cta-section">
+        <p>That's the whole idea — <strong>in the real app he grows with what you actually log</strong>, streaks, XP, and celebrations included.</p>
+        <a class="btn app-store" data-place="hero" id="cta" href="https://apps.apple.com/app/id6799971985"><span aria-hidden="true" style="font-size:1.2rem"></span> Download on the App Store</a>
+      </section>
+    </main>
+
+    <footer>
+      <div class="links">
+        <a href="/jack-steel/">Jack Steel's Protein Tracker</a>
+        <a href="/jack-steel/blog/">Blog</a>
+        <a href="/jack-steel/support">Support</a>
+        <a href="/jack-steel/privacy">Privacy Policy</a>
+        <a href="/jack-steel/terms">Terms of Use</a>
+        <a href="mailto:jhsharaya@gmail.com">Contact</a>
+      </div>
+      <p class="legal-note">
+        © 2026 WristSkill Labs, LLC. Jack Steel's Protein Tracker is a general-wellness tracker; it
+        does not provide medical or nutrition advice. This page saves nothing and uses cookieless
+        analytics — we count visits and taps, never the number you set.
+      </p>
+    </footer>
+  </div>
+
+  <script src="/jack-steel/assets/mascot-core.js"></script>
+  <script>
+    (function () {
+      var stage = document.getElementById('stage');
+      var slider = document.getElementById('grams');
+      var num = document.getElementById('grams-num');
+      var readout = document.getElementById('readout');
+
+      // Non-linear inflate: a normalized logistic centered at 105 g. Most of
+      // the visible growth lands between 60 and 160 g; past 160 the curve
+      // flattens so the top of the range reads "already maxed".
+      function curve(g) {
+        var f = function (x) { return 1 / (1 + Math.exp(-(x - 105) / 30)); };
+        return (f(g) - f(0)) / (f(200) - f(0));
+      }
+
+      function clamp(g) {
+        if (!isFinite(g)) return 0;
+        return Math.min(200, Math.max(0, Math.round(g / 5) * 5));
+      }
+
+      var gold = document.getElementById('gold');
+      var goldLo = document.getElementById('gold-tint-lo');
+      var goldHi = document.getElementById('gold-tint-hi');
+      var goldGlow = document.getElementById('gold-glow');
+      var goldLine = document.getElementById('gold-line');
+      // Fallback-fill sweep in viewBox px: shin (440) up to the collar (190),
+      // linear with grams. The denim band (316–362) is skipped so the shorts
+      // stay denim, like the app. 442 = just above shoes.
+      var FILL_BOT = 440, FILL_TOP = 190, TINT_BOT = 442, SHORT_TOP = 316, SHORT_BOT = 362;
+
+      function render(g, from) {
+        stage.style.setProperty('--t', curve(g).toFixed(4));
+        slider.style.setProperty('--pct', (g / 200) * 100);
+        var top = FILL_BOT - (FILL_BOT - FILL_TOP) * (g / 200);
+        var loY = Math.max(top, SHORT_BOT);
+        goldLo.style.setProperty('y', loY + 'px');
+        goldLo.style.setProperty('height', Math.max(0, TINT_BOT - loY) + 'px');
+        goldHi.style.setProperty('y', top + 'px');
+        goldHi.style.setProperty('height', Math.max(0, SHORT_TOP - top) + 'px');
+        goldGlow.style.setProperty('y', (top - 5) + 'px');
+        goldLine.style.setProperty('y', (top - 3) + 'px');
+        gold.classList.toggle('on', g > 0);
+        document.dispatchEvent(new CustomEvent('js-grams', { detail: { g: g, interact: from !== undefined } }));
+        if (g > 0) {
+          readout.textContent = g + ' g';
+          readout.classList.remove('is-hint');
+        } else {
+          readout.textContent = 'slide to pump  ⇢';
+          readout.classList.add('is-hint');
+        }
+        slider.setAttribute('aria-valuetext', g + ' grams');
+        if (from !== slider) slider.value = g;
+        if (from !== num) num.value = g;
+      }
+
+      var touched = false;
+      function onInput(e) {
+        var g = clamp(parseFloat(e.target.value));
+        render(g, e.target);
+        if (!touched) { touched = true; track('slider_touched'); }
+      }
+      slider.addEventListener('input', onInput);
+      num.addEventListener('input', onInput);
+      num.addEventListener('blur', function () { num.value = clamp(parseFloat(num.value)); });
+
+      render(0);
+
+      // --- Analytics: Aptabase, cookieless, fire-and-forget. Same one-POST
+      // transport as the app's analyticsAptabase.ts. Counts events only —
+      // the gram value is NEVER sent anywhere. Paste a web app key from the
+      // Aptabase dashboard to switch it on; empty key = every call is a no-op.
+      var APTABASE_KEY = '';
+      var HOST = APTABASE_KEY.indexOf('A-EU-') === 0 ? 'https://eu.aptabase.com'
+        : APTABASE_KEY.indexOf('A-US-') === 0 ? 'https://us.aptabase.com' : '';
+      var sessionId = Math.floor(Date.now() / 1000) + String(Math.floor(Math.random() * 1e8)).padStart(8, '0');
+
+      function track(name, props) {
+        if (!APTABASE_KEY || !HOST) return;
+        try {
+          fetch(HOST + '/api/v0/event', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'App-Key': APTABASE_KEY },
+            body: JSON.stringify({
+              timestamp: new Date().toISOString(),
+              sessionId: sessionId,
+              eventName: name,
+              systemProps: { isDebug: false, osName: 'Web', osVersion: '', appVersion: '1', sdkVersion: 'jacksteel-web-fetch@1' },
+              props: props
+            })
+          }).catch(function () { /* dropped, by design */ });
+        } catch (e) { /* dropped, by design */ }
+      }
+
+      var ref = 'direct';
+      try { if (document.referrer) ref = new URL(document.referrer).hostname; } catch (e) {}
+      track('pageview', { referrer: ref });
+
+      if ('IntersectionObserver' in window) {
+        var seen = false;
+        var io = new IntersectionObserver(function (entries) {
+          if (!seen && entries.some(function (en) { return en.isIntersecting; })) {
+            seen = true; track('scroll_to_cta'); io.disconnect();
+          }
+        }, { threshold: 0.5 });
+        io.observe(document.getElementById('cta'));
+      }
+
+      var links = document.querySelectorAll('a.app-store');
+      for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function (e) {
+          track('cta_click', { placement: e.currentTarget.getAttribute('data-place') || 'page' });
+        });
+      }
+    })();
+  </script>
+  <script>
+    // The app's renderer, verbatim shader. mascot-core.js IS rn/mascot.ts
+    // (esbuild bundle — regenerate with:
+    //   npx esbuild mascot.ts --bundle --format=iife --global-name=MascotCore \
+    //     --outfile=.../jack-steel/assets/mascot-core.js --minify
+    // from ~/Code/active/beefcake/rn whenever the app's mascot changes).
+    // This driver replays App.tsx's uniform uploads for the demo case:
+    // front view, all groups trained (rest-day full body), per-muscle gold.
+    (function () {
+      var MC = window.MascotCore;
+      var cv = document.getElementById('gl-stage');
+      var stageEl = document.getElementById('stage');
+      if (!MC || !cv) return;
+      var gl;
+      try { gl = cv.getContext('webgl') || cv.getContext('experimental-webgl'); } catch (e) { return; }
+      if (!gl) return; // SVG fallback stays
+
+      function sh(type, src) {
+        var s = gl.createShader(type);
+        gl.shaderSource(s, src); gl.compileShader(s);
+        if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s));
+        return s;
+      }
+      var prog;
+      try {
+        prog = gl.createProgram();
+        gl.attachShader(prog, sh(gl.VERTEX_SHADER, MC.VS));
+        gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, MC.FS));
+        gl.linkProgram(prog);
+        if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
+      } catch (e) { return; }
+      gl.useProgram(prog);
+      var quad = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, quad);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+      var pLoc = gl.getAttribLocation(prog, 'p');
+      gl.enableVertexAttribArray(pLoc);
+      gl.vertexAttribPointer(pLoc, 2, gl.FLOAT, false, 0, 0);
+
+      var U = {};
+      ['dim', 'time', 'bgDim', 'bgKind', 'bgColor', 'stage', 'view', 'bgAspect', 'centers', 'radii', 'amps',
+       'pose', 'fx', 'mirror', 'fill', 'fillY', 'motion', 'fillMode', 'rearG', 'fillC', 'fillR', 'fillSel', 'sweepTop']
+        .forEach(function (n) { U[n] = gl.getUniformLocation(prog, n); });
+      gl.uniform1i(gl.getUniformLocation(prog, 'tex'), 0);
+      gl.uniform1i(gl.getUniformLocation(prog, 'bgTex'), 1);
+      gl.uniform2f(U.dim, 944, 1133);
+      gl.uniform2fv(U.centers, new Float32Array(MC.MUSCLES.map(function (m) { return m.c; }).flat()));
+      gl.uniform1fv(U.radii, new Float32Array(MC.MUSCLES.map(function (m) { return m.r; })));
+      gl.uniform1f(U.mirror, 0); gl.uniform1f(U.rearG, 0);
+      gl.uniform1f(U.fillMode, 1); gl.uniform1f(U.bgDim, 0);
+      gl.uniform1f(U.bgKind, 1); gl.uniform3f(U.bgColor, 0.04, 0.08, 0.14);
+      gl.uniform1f(U.bgAspect, 944 / 1133);
+      gl.uniform4f(U.pose, 1, 1, 0, 0); gl.uniform3f(U.fx, 0, 0, 0);
+      var blobs = MC.fillBlobs('front');
+      var fillC = new Float32Array(MC.FB * 2), fillR = new Float32Array(MC.FB), fillSel = new Float32Array(MC.FB);
+      for (var i = 0; i < MC.FB; i++) {
+        var b = blobs[i];
+        if (b) { fillC[i * 2] = b.c[0]; fillC[i * 2 + 1] = b.c[1]; fillR[i] = b.r; }
+      }
+      gl.uniform2fv(U.fillC, fillC);
+      gl.uniform1fv(U.fillR, fillR);
+      var sweep = MC.fillExtent('front', MC.GKEYS);
+
+      function tex(unit) {
+        var t = gl.createTexture();
+        gl.activeTexture(unit); gl.bindTexture(gl.TEXTURE_2D, t);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+        return t;
+      }
+      function loadImg(src) {
+        return new Promise(function (res, rej) {
+          var im = new Image();
+          im.onload = function () { res(im); }; im.onerror = rej;
+          im.src = src;
+        });
+      }
+
+      var rmq = window.matchMedia('(prefers-reduced-motion: reduce)');
+      var G = 0, grinUntil = 0, pumpT0 = -1e9;
+      document.addEventListener('js-grams', function (e) {
+        if (e.detail.g > G && e.detail.interact) { grinUntil = performance.now() + 900; pumpT0 = performance.now(); }
+        G = e.detail.g;
+      });
+
+      Promise.all([
+        loadImg('/jack-steel/assets/tex-front.png'),
+        loadImg('/jack-steel/assets/tex-grin.png'),
+        loadImg('/jack-steel/assets/flag.png')
+      ]).then(function (imgs) {
+        var texFront = tex(gl.TEXTURE0), texGrin = tex(gl.TEXTURE0), texFlag = tex(gl.TEXTURE1);
+        gl.activeTexture(gl.TEXTURE0);
+        gl.bindTexture(gl.TEXTURE_2D, texFront);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, imgs[0]);
+        gl.bindTexture(gl.TEXTURE_2D, texGrin);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, imgs[1]);
+        gl.activeTexture(gl.TEXTURE1);
+        gl.bindTexture(gl.TEXTURE_2D, texFlag);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, imgs[2]);
+        stageEl.classList.add('gl-on');
+
+        var disp = new Float32Array(MC.N);
+        var GOF = MC.FRONT_G_OF;
+        function frame(now) {
+          var dpr = Math.min(window.devicePixelRatio || 1, 2);
+          var w = Math.round(cv.clientWidth * dpr), h = Math.round(cv.clientHeight * dpr);
+          if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; gl.viewport(0, 0, w, h); }
+          var rm = rmq.matches;
+          var t = curveT(G);
+          for (var i = 0; i < MC.N; i++) disp[i] += (t - disp[i]) * 0.18;
+          // breath (chest leads, belly +150ms, shoulders +260ms — App.tsx phases)
+          var br = function (lag) { return rm ? 0 : 0.5 - 0.5 * Math.cos((now - lag) * 2 * Math.PI / 4200); };
+          var brC = br(0), brB = br(150), brS = br(260);
+          var pump = rm ? 0 : 0.30 * Math.exp(-(now - pumpT0) / 220);
+          var amps = new Float32Array(MC.N);
+          for (i = 0; i < MC.N; i++) {
+            var d = disp[i];
+            if (i === 4) d += 0.22 * brC;
+            else if (i === 5) d += 0.12 * brB;
+            else if (i === 2 || i === 3) d += 0.07 * brS;
+            if (i < 4) d += pump;
+            amps[i] = MC.MUSCLES[i].a * d;
+          }
+          gl.uniform1fv(U.amps, amps);
+          var fillPct = G / 200;
+          gl.uniform1f(U.fill, fillPct);
+          for (i = 0; i < MC.FB; i++) fillSel[i] = (G > 0 && blobs[i] && blobs[i].g) ? 1 : 0;
+          gl.uniform1fv(U.fillSel, fillSel);
+          gl.uniform1f(U.fillY, sweep.bot - fillPct * (sweep.bot - sweep.top));
+          gl.uniform1f(U.sweepTop, sweep.top);
+          gl.activeTexture(gl.TEXTURE0);
+          gl.bindTexture(gl.TEXTURE_2D, now < grinUntil ? texGrin : texFront);
+          gl.uniform1f(U.time, now / 1000);
+          gl.uniform1f(U.motion, rm ? 0 : 1);
+          // stage rect: art aspect incl. headroom, feet at the bottom of the view
+          var AR = 944 / (1133 + MC.STAGE_HEADROOM);
+          var sh2 = h, sw2 = sh2 * AR;
+          if (sw2 > w) { sw2 = w; sh2 = sw2 / AR; }
+          gl.uniform4f(U.stage, (w - sw2) / 2, h - sh2, sw2, sh2);
+          gl.uniform2f(U.view, w, h);
+          gl.drawArrays(gl.TRIANGLES, 0, 3);
+          requestAnimationFrame(frame);
+        }
+        // same inflate curve as the fallback (normalized logistic, centre 105)
+        function curveT(g) {
+          var f = function (x) { return 1 / (1 + Math.exp(-(x - 105) / 30)); };
+          return (f(g) - f(0)) / (f(200) - f(0));
+        }
+        requestAnimationFrame(frame);
+      }).catch(function () { /* SVG fallback stays */ });
+    })();
+  </script>
+</body>
+</html>
