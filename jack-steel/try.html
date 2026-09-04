@@ -307,7 +307,7 @@
       // transport as the app's analyticsAptabase.ts. Counts events only —
       // the gram value is NEVER sent anywhere. Paste a web app key from the
       // Aptabase dashboard to switch it on; empty key = every call is a no-op.
-      var APTABASE_KEY = '';
+      var APTABASE_KEY = 'A-EU-3006096587';
       var HOST = APTABASE_KEY.indexOf('A-EU-') === 0 ? 'https://eu.aptabase.com'
         : APTABASE_KEY.indexOf('A-US-') === 0 ? 'https://us.aptabase.com' : '';
       var sessionId = Math.floor(Date.now() / 1000) + String(Math.floor(Math.random() * 1e8)).padStart(8, '0');
