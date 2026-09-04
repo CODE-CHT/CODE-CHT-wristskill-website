@@ -542,6 +542,14 @@
 
     .status-live::before { background: var(--teal); }
 
+    .status-review {
+      background: rgba(229,169,48,0.12);
+      color: #8A6414;
+      border: 1px solid rgba(229,169,48,0.35);
+    }
+
+    .status-review::before { background: #E5A930; }
+
     .tech-stack {
       display: flex;
       flex-wrap: wrap;
@@ -573,6 +581,8 @@
       box-shadow: 0 2px 10px rgba(27,58,92,0.08), 0 0 0 1px rgba(27,58,92,0.06);
       transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
     }
+
+    .p-section-white .project-card-featured { background: var(--cream); }
 
     .project-card-featured:hover {
       transform: translateY(-3px);
@@ -775,7 +785,7 @@
       <nav class="pl-nav" aria-label="Page sections">
         <ul>
           <li><a href="#clinic" class="nav-link">For the Clinic</a></li>
-          <li><a href="#house" class="nav-link">For the House</a></li>
+          <li><a href="#health" class="nav-link">For Your Health</a></li>
           <li><a href="#web" class="nav-link">For the Web</a></li>
           <li><a href="#tech" class="nav-link">Tech Stack</a></li>
           <li><a href="#connect" class="nav-link">Get in Touch</a></li>
@@ -809,11 +819,11 @@
               <em>Then I ship it.</em>
             </h2>
             <p class="hero-projects-sub">
-              Six products live across iOS, Android, and the web. Each one traces back to a real gap in a domain I actually live in — the clinic, the house, or the web.
+              Seven products across iOS, Android, and the web — six live, the newest in App Store review. Each one traces back to a real gap in a domain I actually live in — the clinic, the home, or the web.
             </p>
             <div class="hero-stats">
-              <span class="hero-stat"><strong>6</strong> shipped</span>
-              <span class="hero-stat"><strong>2</strong> mobile apps</span>
+              <span class="hero-stat"><strong>7</strong> products</span>
+              <span class="hero-stat"><strong>3</strong> mobile apps</span>
               <span class="hero-stat"><strong>3</strong> Chrome extensions</span>
               <span class="hero-stat"><strong>1</strong> web app</span>
             </div>
@@ -904,12 +914,12 @@
         </p>
       </section>
 
-      <!-- ── For the house ── -->
-      <section class="p-section p-section-cream" id="house">
+      <!-- ── For your health ── -->
+      <section class="p-section p-section-cream" id="health">
         <div class="section-label">
-          <span class="eyebrow">For the house</span>
+          <span class="eyebrow">For your health</span>
         </div>
-        <p class="section-why">My family needed a better system than a whiteboard.</p>
+        <p class="section-why">Daily health habits — who's showered, how much protein — stick better with a scoreboard than a whiteboard.</p>
 
         <!-- Featured wide card -->
         <div class="project-card-featured fade-in">
@@ -939,6 +949,34 @@
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
                 Download on App Store
               </a>
+            </div>
+          </div>
+        </div>
+        <!-- Jack Steel — second featured card -->
+        <div class="project-card-featured fade-in" style="margin-top:1.5rem;">
+          <div class="featured-screenshot">
+            <img src="jack-steel/assets/hero.jpg" alt="Jack Steel mascot flexing in front of an American flag" loading="lazy" style="object-position: center 15%;">
+          </div>
+          <div class="featured-content">
+            <div>
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.75rem;margin-bottom:0.2rem;">
+                <h3>Jack Steel's Protein Tracker</h3>
+                <span class="status-badge status-review">In review</span>
+              </div>
+              <div class="platform-tag">iOS · React Native · WebGL</div>
+            </div>
+            <p class="project-why" style="font-style:italic;font-size:0.8rem;color:#5E6E7E;padding-bottom:0.65rem;border-bottom:1px solid var(--grey-border);">Tracking one number every day only works if you actually want to open the app.</p>
+            <p><strong>A gamified protein tracker with one job: your daily number.</strong> You set the goal — the app never calculates or recommends one — and every gram you log grows Jack Steel's muscles on a live GLSL shader, with a flag-waving, pyrotechnic celebration when you hit it. Logs stay on the device.</p>
+            <p><em style="color:#5E6E7E;font-size:0.85rem;">Currently in App Store review — the site, demo, and blog are live now.</em></p>
+            <div class="tech-stack">
+              <span class="tech-tag">Expo</span>
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">GLSL</span>
+              <span class="tech-tag">iOS</span>
+            </div>
+            <div>
+              <a href="jack-steel/" class="btn btn-primary">Meet Jack Steel</a>
+              <a href="jack-steel/try" class="card-textlink" style="margin-left:0.9rem;">Try the browser demo →</a>
             </div>
           </div>
         </div>
