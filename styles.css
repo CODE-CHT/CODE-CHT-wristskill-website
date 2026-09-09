@@ -1160,3 +1160,142 @@ article.prose > .lead {
   .callout { padding: 1.25rem 1.5rem; }
   .references li { padding-left: 2rem; font-size: 0.9rem; }
 }
+
+/* ------------------------------ Print / PDF ----------------------------
+   Clinicians print the reference pages and hand them to colleagues, and the
+   Functional Goals PDF at /functional-goals.pdf is rendered straight from
+   this page rather than authored separately — so the paper version can never
+   drift from the web version. Re-render after editing the page:
+
+     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+       --headless=new --no-pdf-header-footer --virtual-time-budget=10000 \
+       --print-to-pdf=functional-goals.pdf file://$PWD/functional-goals.html
+
+   Anything that is navigation, promotion or chrome comes off; the two claim
+   disclaimers and the legal line stay, on purpose. */
+
+@media print {
+  @page {
+    size: letter;
+    margin: 0.6in 0.65in;
+  }
+
+  html, body {
+    background: #fff;
+    color: #1a1a1a;
+    font-size: 10.5pt;
+  }
+
+  /* Navigation, promotion, and the widget have no meaning on paper. The CTA
+     goes too — inside the PDF it would offer the reader the PDF. */
+  .skip-link,
+  .site-nav,
+  .injury-nav,
+  .article-cta,
+  .footer-grid,
+  #wristskill-assistant {
+    display: none !important;
+  }
+
+  main, article.prose, .container, .container-narrow {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* The navy masthead becomes a printed title block. */
+  .page-header {
+    background: none;
+    color: inherit;
+    padding: 0 0 1rem;
+    border-bottom: 2px solid #1B3A5C;
+    margin-bottom: 1.25rem;
+  }
+
+  .page-header h1 { color: #1B3A5C; font-size: 21pt; line-height: 1.15; }
+  .page-header .eyebrow { color: #0A8580; }
+  .page-header .lead { color: #3F4E5C; }
+
+  .audience-marker {
+    color: #0A8580;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .byline { margin: 0 0 1.25rem; font-size: 9pt; }
+
+  /* Tints are printed deliberately: the amber warning is a claims
+     disclaimer and must survive the trip to paper. */
+  .callout {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    break-inside: avoid;
+    font-size: 9.5pt;
+  }
+
+  .prose p, .prose .lead { font-size: 10.5pt; line-height: 1.5; }
+  .prose .lead { margin-bottom: 1rem; }
+
+  /* One injury type per sheet: the reader who wants TFCC pulls one page. */
+  .injury-section {
+    padding: 0;
+    border-bottom: none;
+    break-before: page;
+    break-inside: auto;
+  }
+
+  .injury-section:first-of-type { break-before: auto; }
+  .injury-section h2 { font-size: 17pt; break-after: avoid; }
+  .injury-section .eyebrow { break-after: avoid; }
+
+  .stage-block { margin: 1.25rem 0; break-inside: avoid; }
+  .stage-block h3 { font-size: 9.5pt; break-after: avoid; }
+
+  .goal-list li {
+    padding: 0.45rem 0 0.45rem 1.1rem;
+    font-size: 10pt;
+    line-height: 1.45;
+    break-inside: avoid;
+  }
+
+  .goal-list li::before {
+    top: 0.85rem;
+    width: 5px;
+    height: 5px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a { color: inherit; text-decoration: none; border-bottom: none; }
+
+  /* The legal line is the only part of the footer that has to reach paper. */
+  .site-footer {
+    background: none;
+    color: #6b7280;
+    padding: 1rem 0 0;
+    margin-top: 1.5rem;
+    border-top: 1px solid #d1d5db;
+    break-inside: avoid;
+  }
+
+  .footer-legal {
+    display: block;
+    border: none;
+    padding: 0;
+    font-size: 8.5pt;
+    color: #6b7280;
+  }
+
+  .footer-legal span { display: block; color: #6b7280; }
+
+  .footer-legal::after {
+    content: 'wristskill.com/functional-goals';
+    display: block;
+    color: #6b7280;
+  }
+}

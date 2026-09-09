@@ -20,3 +20,11 @@
 # reason, and a stale worker in production is a deploy nobody can see.
 /frozen-fortune/play/index.service.worker.js
   Cache-Control: public, max-age=0, must-revalidate
+
+# The Functional Goals PDF is the same words as /functional-goals, rendered for
+# print. It is a handout to attach to an email, not a second page to rank — and
+# an indexed duplicate would compete with the page it came from. Same reasoning
+# as the block above: a header travels with the file, a robots.txt Disallow does
+# not stop an indexed URL.
+/functional-goals.pdf
+  X-Robots-Tag: noindex
