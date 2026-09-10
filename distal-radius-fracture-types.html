@@ -209,7 +209,7 @@
 
     <h2 id="two-questions">The two questions behind every name</h2>
     <p>The named patterns look like a list of unrelated surnames, but they are really just the answers to two questions.</p>
-    <p><strong>First: which way did the broken end move?</strong> Toward the back of your hand is called dorsal. Toward your palm is called volar or palmar. A wrist where the end has tipped backward can have a slight step in the profile, which older textbooks call a dinner fork shape.<sup class="cite"><a href="#ref12">12</a></sup></p>
+    <p><strong>First: which way did the broken end move?</strong> Toward the back of your hand is called dorsal. Toward your palm is called volar or palmar. A wrist where the end has tipped backward can have a slight step in the profile, a shape clinicians call a dinner fork deformity, for a reason the picture below makes obvious.<sup class="cite"><a href="#ref12">12</a></sup></p>
     <p><strong>Second: did the fracture line reach the joint surface?</strong> If it stopped in the solid bone before the cartilage, it is extra-articular. If it ran all the way into that gliding surface, it is intra-articular.</p>
     <p>Two questions, two answers each, and four of the names on your report fall straight out of the grid.</p>
 
@@ -227,6 +227,14 @@
       .fx-moved { fill: #DCC59B; stroke: #1B3A5C; stroke-width: 2; stroke-linejoin: round; }
       .fx-hand { fill: #FFFFFF; stroke: #1B3A5C; stroke-width: 2; stroke-linejoin: round; }
       .fx-crack { fill: none; stroke: #B84A32; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+      .fk-arm { fill: #F2E2D0; stroke: #1B3A5C; stroke-width: 2.4; stroke-linejoin: round; }
+      .fk-fork { fill: #DCE4EC; stroke: #1B3A5C; stroke-width: 2.4; stroke-linejoin: round; }
+      .fk-thin { fill: none; stroke: #1B3A5C; stroke-width: 1.6; opacity: .5; }
+      .fk-trace { fill: none; stroke: #0EA5A0; stroke-width: 3; stroke-dasharray: 7 6; stroke-linecap: round; }
+      .fk-link { fill: none; stroke: #0EA5A0; stroke-width: 1.4; stroke-dasharray: 4 5; opacity: .6; }
+      .fk-nm { font-family: var(--font-sans); font-size: 17px; font-weight: 700; fill: #1B3A5C; }
+      .fk-sb { font-family: var(--font-sans); font-size: 13px; fill: #6B7A88; }
+      .fk-pt { font-family: var(--font-sans); font-size: 11.5px; font-weight: 500; fill: #0A8580; letter-spacing: .06em; text-transform: uppercase; }
       .cite { font-size: 0.7em; line-height: 0; white-space: nowrap; }
       .cite a { color: var(--teal-dark); font-weight: 500; border-bottom: none; padding: 0 0.5px; }
       .cite a:hover { border-bottom: 1px solid var(--teal-dark); }
@@ -331,6 +339,29 @@
 
     <h3>Colles fracture</h3>
     <p>The break sits just above the wrist, stops before the joint surface, and the end tips backward toward the back of the hand.<sup class="cite"><a href="#ref12">12</a></sup> This is the pattern most people picture when they hear broken wrist, and it is the classic result of landing on an outstretched hand with the wrist bent back.<sup class="cite"><a href="#ref12">12</a></sup> It is named for Abraham Colles, who described it in 1814, eight decades before X-rays existed to confirm it.<sup class="cite"><a href="#ref1">1</a></sup> Worth knowing: strictly the name means an extra-articular fracture, but in everyday use it often gets applied to almost any dorsally displaced distal radius fracture.<sup class="cite"><a href="#ref12">12</a></sup></p>
+
+    <figure class="fx-figure">
+      <svg viewBox="0 0 760 480" role="img" aria-labelledby="df-title df-desc" xmlns="http://www.w3.org/2000/svg">
+        <title id="df-title">Why a Colles fracture is called a dinner fork deformity</title>
+        <desc id="df-desc">Two side-on silhouettes stacked and aligned. Above, a forearm and hand seen from the thumb side after a Colles fracture: the forearm is level, a step rises at the wrist where the end of the radius has been pushed backward, and the hand sits level again beyond it. Below, a dinner fork lying on its side in the same orientation: the handle is level, the neck rises, and the tines lie level again. Dashed lines connect the start, peak and end of the rise on the wrist to the same three points on the fork, showing that the two outlines share one profile.</desc>
+        <text class="fk-nm" x="380" y="22" text-anchor="middle">Why they call it a dinner fork</text>
+        <text class="fk-sb" x="380" y="46" text-anchor="middle">The wrist from the thumb side. The step is the end of the radius pushed backward.</text>
+        <path class="fk-arm" d="M720,102 L474,102 C444,102 416,72 380,72 C344,72 330,102 300,104 L228,110 C198,113 180,124 180,140 C180,156 198,166 228,163 L302,157 L474,166 L720,170 Z"/>
+        <path class="fk-thin" d="M302,157 L300,104 M232,112 C214,120 212,154 230,161 M256,110 C242,118 240,152 254,159"/>
+        <path class="fk-trace" d="M474,102 C444,102 416,72 380,72 C344,72 330,102 300,104 L230,110"/>
+        <text class="fk-pt" x="714" y="142" text-anchor="end">forearm</text>
+        <text class="fk-pt" x="206" y="192">hand</text>
+        <path class="fk-link" d="M474,172 L474,336 M380,76 L380,296 M300,164 L300,336"/>
+        <path class="fk-fork" d="M726,348 C742,348 742,372 726,372 L556,364 C516,362 496,348 474,340 C444,329 416,296 380,296 C344,296 330,328 300,334 L196,356 L194,398 L300,374 C338,366 366,352 392,340 C420,327 470,322 556,326 Z"/>
+        <path class="fk-thin" d="M196,356 L194,398 M228,349 L226,391 M260,342 L258,384"/>
+        <path class="fk-trace" d="M474,340 C444,329 416,296 380,296 C344,296 330,328 300,334 L198,356"/>
+        <text class="fk-pt" x="720" y="326" text-anchor="end">handle</text>
+        <text class="fk-pt" x="188" y="426">tines</text>
+        <text class="fk-sb" x="380" y="462" text-anchor="middle">A dinner fork on its side: level, a rise at the neck, then level again.</text>
+      </svg>
+      <figcaption>The deformity is named for what it looks like from the side, not for anything about the bone. Not every Colles fracture shows it, and a fracture that has been put back into position should not.</figcaption>
+    </figure>
+
 
     <h3>Smith fracture</h3>
     <p>The same location, the opposite direction. The end tips toward the palm instead of the back of the hand, which is why it is sometimes called a reverse Colles.<sup class="cite"><a href="#ref3">3</a>,<a href="#ref13">13</a></sup> It tends to follow a fall onto a bent-forward wrist or a direct blow to the back of the wrist.<sup class="cite"><a href="#ref13">13</a></sup> The classic profile is called a garden spade deformity, the counterpart to the dinner fork. Smith fractures are frequently unstable and often prove difficult to hold in a cast, so when they are displaced they usually go to surgery, most often a plate placed on the palm side.<sup class="cite"><a href="#ref13">13</a></sup> There is a second reason surgeons care about correcting the volar shift: left displaced, it narrows the entrance to the carpal tunnel and can crowd the nerve that runs through it.<sup class="cite"><a href="#ref13">13</a></sup></p>
