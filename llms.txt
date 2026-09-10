@@ -16,8 +16,10 @@ WristSkill (the app) measures wrist performance across six movement planes using
 
 ## Family apps
 
-- [Shower Tally](https://wristskill.com/shower-tally/): a family shower-tracking iPhone app — a shared real-time board of who's showered and who's overdue
-- [Shower Tally blog](https://wristskill.com/shower-tally/blog/): guides on hygiene routines for ADHD adults, family caregivers, parents, and I/DD support staff
+- [Shower Tally](https://wristskill.com/shower-tally/): a family shower-tracking app for iPhone and Android — a shared real-time board of who's showered and who's overdue
+- [What is Shower Tally?](https://wristskill.com/shower-tally/what-is-shower-tally): the full product description — how it works, what Fresh / Due Soon / Overdue mean, who it is for, and what it does not do
+- [Shower Tally blog](https://wristskill.com/shower-tally/blog/): guides on hygiene routines for parents, ADHD adults, autistic children, family caregivers, and I/DD support staff
+- [How often should kids shower?](https://wristskill.com/shower-tally/blog/how-often-should-kids-shower): age-by-age bathing and hair-washing frequency, sourced to the American Academy of Dermatology and American Academy of Pediatrics
 - [Frozen Fortune](https://wristskill.com/frozen-fortune/): a browser-based ice-cream-truck business game for kids 8–14
 
 ## Jack Steel's Protein Tracker

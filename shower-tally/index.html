@@ -33,8 +33,9 @@
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": "https://wristskill.com/shower-tally/#app",
     "name": "Shower Tally",
-    "operatingSystem": "iOS",
+    "operatingSystem": "iOS, Android",
     "applicationCategory": "LifestyleApplication",
     "description": "A family shower tracker: every person and pet in the household gets a card showing when they last showered and when they're due, on a real-time shared board. Free core tracker with an optional Pro subscription.",
     "offers": {
@@ -47,7 +48,11 @@
       "name": "WristSkill Labs, LLC",
       "url": "https://wristskill.com/"
     },
-    "url": "https://apps.apple.com/app/id6771989860"
+    "url": "https://apps.apple.com/app/id6771989860",
+    "installUrl": [
+      "https://apps.apple.com/app/id6771989860",
+      "https://play.google.com/store/apps/details?id=com.sudsstat.app"
+    ]
   }
   </script>
 
@@ -69,7 +74,7 @@
         "name": "What devices does it work on?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Shower Tally is available now on iPhone via the App Store. An Android version is on the way."
+          "text": "Shower Tally is available for iPhone on the App Store and for Android on Google Play."
         }
       },
       {
@@ -108,6 +113,12 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Images carry width/height attrs for CLS. Without height:auto the attr
+       becomes the used height whenever CSS sets only width, which stretched
+       the 720x720 hero duck to 240x720 on mobile. The two square icons below
+       set both dimensions and out-specify this. */
+    img { max-width: 100%; height: auto; }
 
     html { scroll-behavior: smooth; }
 
@@ -265,9 +276,10 @@
       <div class="nav-links">
         <a href="#features">Features</a>
         <a href="#how">How it works</a>
+        <a href="/shower-tally/what-is-shower-tally">About</a>
         <a href="#pricing">Pricing</a>
         <a href="/shower-tally/blog/">Blog</a>
-        <a class="cta" href="https://apps.apple.com/app/id6771989860">Get the app</a>
+        <a class="cta" href="https://apps.apple.com/app/apple-store/id6771989860?pt=128711756&amp;ct=WristskillWebsite&amp;mt=8">Get the app</a>
       </div>
     </nav>
 
@@ -276,11 +288,12 @@
         <h1>Who's showered<br />and who's&nbsp;overdue?</h1>
         <p class="lede">The bubbly family shower tracker — a digital replacement for the whiteboard on your fridge.</p>
         <div class="badges">
-          <a class="store-btn" href="https://apps.apple.com/app/id6771989860">
-            <span style="font-size:1.7rem"></span>
+          <a class="store-btn" href="https://apps.apple.com/app/apple-store/id6771989860?pt=128711756&amp;ct=WristskillWebsite&amp;mt=8">
             <span><small>Download on the</small><span class="big">App&nbsp;Store</span></span>
           </a>
-          <span class="soon">Android coming soon</span>
+          <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.sudsstat.app&amp;referrer=utm_source%3Dwristskill%26utm_medium%3Dweb%26utm_campaign%3DWristskillWebsite">
+            <span><small>Get it on</small><span class="big">Google&nbsp;Play</span></span>
+          </a>
         </div>
         <div class="statuses">
           <span class="chip"><span class="dot" style="background:var(--fresh)"></span>Fresh ✓</span>
@@ -301,7 +314,7 @@
         Shower Tally is a family shower-tracking app for iPhone from WristSkill Labs, LLC.
         Every person — and pet — in your household gets a card showing when they last showered
         and when they're next due, on a real-time board the whole family shares. The core
-        tracker is free, with an optional Pro upgrade for the whole household.
+        tracker is free, with an optional Pro upgrade for the whole household. <a href="/shower-tally/what-is-shower-tally" style="color:var(--ink);font-weight:800">Read the full description &rarr;</a>
       </p>
     </section>
 
@@ -361,7 +374,7 @@
       <h2 class="section-title">Questions</h2>
       <div class="faq">
         <details><summary>Is Shower Tally really free?</summary><p>Yes. You can track one person and log showers for free, forever. Pro is an optional subscription that unlocks your whole household, the guided routine timer, hair-wash tracking, custom schedules, and pets.</p></details>
-        <details><summary>What devices does it work on?</summary><p>Shower Tally is available now on iPhone via the App Store. An Android version is on the way.</p></details>
+        <details><summary>What devices does it work on?</summary><p>Shower Tally is available for iPhone on the App Store and for Android on Google Play.</p></details>
         <details><summary>Does everyone in the family need the app?</summary><p>Anyone with the app can log showers for the whole household, so a shared board works even if only one parent has it installed. For personal nudges, each person installs it and joins the family.</p></details>
         <details><summary>Is my family's data private?</summary><p>Your data is only visible to members of your family. We don't sell it. See our <a href="https://twilight-celestite-fdb.notion.site/Shower-Tally-Privacy-Policy-36ed96d65d8e8167a465d5d5c234eb56">Privacy Policy</a> for details.</p></details>
       </div>
@@ -372,16 +385,21 @@
         <img src="assets/icon.png" alt="Shower Tally icon" width="512" height="512" loading="lazy" />
         <h2>Get everyone fresh.</h2>
         <p>Ditch the fridge whiteboard. Download Shower Tally free.</p>
-        <a class="store-btn" href="https://apps.apple.com/app/id6771989860">
-          <span style="font-size:1.7rem"></span>
-          <span><small>Download on the</small><span class="big">App&nbsp;Store</span></span>
-        </a>
+        <div class="badges" style="justify-content:center">
+          <a class="store-btn" href="https://apps.apple.com/app/apple-store/id6771989860?pt=128711756&amp;ct=WristskillWebsite&amp;mt=8">
+            <span><small>Download on the</small><span class="big">App&nbsp;Store</span></span>
+          </a>
+          <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.sudsstat.app&amp;referrer=utm_source%3Dwristskill%26utm_medium%3Dweb%26utm_campaign%3DWristskillWebsite">
+            <span><small>Get it on</small><span class="big">Google&nbsp;Play</span></span>
+          </a>
+        </div>
       </div>
     </section>
 
     <footer>
       <div class="links">
-        <a href="https://apps.apple.com/app/id6771989860">App Store</a>
+        <a href="https://apps.apple.com/app/apple-store/id6771989860?pt=128711756&amp;ct=WristskillWebsite&amp;mt=8">App Store</a>
+        <a href="https://play.google.com/store/apps/details?id=com.sudsstat.app&amp;referrer=utm_source%3Dwristskill%26utm_medium%3Dweb%26utm_campaign%3DWristskillWebsite">Google Play</a>
         <a href="/shower-tally/blog/">Blog</a>
         <a href="https://twilight-celestite-fdb.notion.site/Shower-Tally-Privacy-Policy-36ed96d65d8e8167a465d5d5c234eb56">Privacy Policy</a>
         <a href="https://twilight-celestite-fdb.notion.site/Shower-Tally-Help-Support-36ed96d65d8e81f7ae4fcbe37759f027">Support</a>

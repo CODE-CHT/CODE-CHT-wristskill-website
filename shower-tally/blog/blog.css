@@ -142,6 +142,8 @@ article a:hover { color: var(--ink); }
 .tag-aging { background: var(--overdue); }
 .tag-parents { background: var(--fresh); }
 .tag-idd { background: #2f8f9a; }
+.tag-autism { background: #d98a3a; }
+.tag-reference { background: #12494a; }
 
 /* --- Footer --- */
 footer { padding: 40px 0 60px; text-align: center; font-weight: 700; color: var(--ink-soft); }
@@ -149,3 +151,24 @@ footer .links { display: flex; gap: 20px; justify-content: center; flex-wrap: wr
 footer a { color: var(--ink); text-decoration: none; }
 footer a:hover { text-decoration: underline; }
 footer .fine { font-size: 0.84rem; font-weight: 600; opacity: 0.8; }
+
+/* sources list — no bubble bullets on citations */
+.sources h2 { margin-top: 40px; }
+.sources ul li { padding-left: 0; font-size: 0.98rem; }
+.sources ul li::before { content: none; }
+
+/* numbered steps — entity page "How does it work?" */
+article ol.numbered { margin: 0 0 20px; padding-left: 26px; }
+article ol.numbered li { font-size: 1.08rem; margin-bottom: 12px; padding-left: 6px; }
+article ol.numbered li::marker { font-weight: 900; color: var(--ink); }
+
+/* reference table — pillar pages */
+.tablewrap { overflow-x: auto; margin: 0 0 24px; -webkit-overflow-scrolling: touch; }
+article table { border-collapse: collapse; width: 100%; min-width: 460px; font-size: 1rem; }
+article table th, article table td { text-align: left; padding: 11px 14px; border-bottom: 1px solid rgba(18,73,74,0.12); vertical-align: top; }
+article table th { font-weight: 900; color: var(--ink); background: rgba(255,255,255,0.55); white-space: nowrap; }
+article table tr:last-child td { border-bottom: none; }
+article table td strong { white-space: nowrap; }
+
+/* two store buttons: centre and wrap cleanly at any width */
+.cta-box .store-btn { margin: 6px 5px 0; }
