@@ -17,12 +17,30 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/jack-steel/steel.css" />
+  <style>
+    .calc { border: 1px solid var(--line); border-radius: 14px; background: var(--sheet); padding: 20px 22px; margin: 22px 0; }
+    .calc-scope, .calc-note { font-size: 0.9rem; color: var(--dim); }
+    .calc-in { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 14px 0; }
+    .calc-in label { font-weight: 700; }
+    #calc-w { width: 110px; background: var(--well); border: 1px solid var(--line2); border-radius: 10px; color: var(--ink); font: inherit; font-size: 1.05rem; padding: 9px 12px; }
+    #calc-w:focus { outline: 2px solid var(--green); outline-offset: 1px; }
+    .calc-units { display: flex; border: 1px solid var(--line2); border-radius: 10px; overflow: hidden; }
+    .calc-units button { font: inherit; font-weight: 700; background: transparent; color: var(--dim); border: 0; padding: 9px 16px; cursor: pointer; }
+    .calc-units button.on { background: var(--green); color: var(--on-green); }
+    .ref-n { color: var(--mute); font-size: 0.85em; }
+    @media (max-width: 560px) {
+      .calc { padding: 16px 14px; }
+      .calc table { font-size: 0.82rem; }
+      .calc table th, .calc table td { padding-left: 8px; padding-right: 8px; }
+    }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "How Much Protein Do People Need? What the Official Numbers Say",
     "datePublished": "2026-09-04",
+    "dateModified": "2026-09-11",
     "author": { "@type": "Organization", "name": "WristSkill Labs, LLC", "url": "https://wristskill.com/" },
     "publisher": { "@type": "Organization", "name": "WristSkill Labs, LLC" },
     "mainEntityOfPage": "https://wristskill.com/jack-steel/blog/how-much-protein-official-numbers"
@@ -35,7 +53,8 @@
     "mainEntity": [
       { "@type": "Question", "name": "What is the official RDA for protein?", "acceptedAnswer": { "@type": "Answer", "text": "The Dietary Reference Intakes published by the U.S. National Academies set the Recommended Dietary Allowance for healthy adults at 0.8 grams of protein per kilogram of body weight per day. The same report defines an Acceptable Macronutrient Distribution Range of 10–35% of daily calories from protein. These are population reference values, not individual advice." } },
       { "@type": "Question", "name": "Why do sports nutrition organizations publish higher protein numbers than the RDA?", "acceptedAnswer": { "@type": "Answer", "text": "The RDA is defined as the intake sufficient to meet the requirement of nearly all healthy people — a level built on preventing deficiency. Position stands from bodies like the American College of Sports Medicine (1.2–2.0 g/kg/day for athletes) and the International Society of Sports Nutrition (1.4–2.0 g/kg/day for building and maintaining muscle) are answering a different question: intakes associated with training adaptations, not minimums to avoid deficiency." } },
-      { "@type": "Question", "name": "So how much protein should I eat?", "acceptedAnswer": { "@type": "Answer", "text": "No article can answer that, and this one deliberately doesn't try. The published values are population references written for healthy adults; pregnancy, childhood, older age, kidney or liver conditions, diabetes, and a history of disordered eating all change the picture. A physician, dietitian, or other qualified health provider is the right source for a personal number." } }
+      { "@type": "Question", "name": "So how much protein should I eat?", "acceptedAnswer": { "@type": "Answer", "text": "No article can answer that, and this one deliberately doesn't try. The published values are population references written for healthy adults; pregnancy, childhood, older age, kidney or liver conditions, diabetes, and a history of disordered eating all change the picture. A physician, dietitian, or other qualified health provider is the right source for a personal number." } },
+      { "@type": "Question", "name": "Does the converter on this page tell me how much protein to eat?", "acceptedAnswer": { "@type": "Answer", "text": "No. It is unit conversion, nothing more: it multiplies the published grams-per-kilogram reference values cited in the article by a body weight you enter, and shows every published figure side by side rather than picking one. It asks no goal, applies no formula of its own, makes no recommendation, and nothing entered is stored or transmitted — the arithmetic runs entirely in the browser." } }
     ]
   }
   </script>
@@ -47,7 +66,7 @@
       <div class="nav-links">
         <a href="/jack-steel/blog/">Blog</a>
         <a href="/jack-steel/try">Try the demo</a>
-        <a class="btn small" href="https://apps.apple.com/app/id6799971985">App&nbsp;Store</a>
+        <a class="btn small" href="https://apps.apple.com/app/id6799971985?pt=128711756&ct=site-blog&mt=8">App&nbsp;Store</a>
       </div>
     </nav>
 
@@ -59,7 +78,8 @@
       </header>
 
       <div class="callout">
-        <p style="margin-bottom:0;"><strong>Read this first.</strong> This article reports what published reference documents say — nothing more. It is general information, not medical or nutrition advice, and no number below is a recommendation about what <em>you</em> should eat. The documents themselves are population references written for healthy people; your number is a conversation for a physician, dietitian, or other qualified health provider.</p>
+        <p><strong>Read this first.</strong> This article reports what published reference documents say — nothing more. It is general information, not medical or nutrition advice, and no number below is a recommendation about what <em>you</em> should eat. The documents themselves are population references written for healthy people; your number is a conversation for a physician, dietitian, or other qualified health provider.</p>
+        <p style="margin-bottom:0;">Published by WristSkill Labs, LLC, a software company. Reading it creates no clinician–patient or dietitian–client relationship, and no licensed professional is acting in a professional capacity here. See our <a href="/jack-steel/terms">Terms of Use</a>.</p>
       </div>
 
       <p>"How much protein do I need?" is probably the most-searched question in nutrition, and most answers on the internet are someone's opinion wearing a lab coat. The honest answer is that several official and peer-reviewed reference numbers exist, they were written for different purposes, and they don't fully agree. So instead of picking one and selling it, here is the whole shelf — who published each number, what it actually means, and why they differ.</p>
@@ -71,6 +91,73 @@
 
       <h2>What "grams per kilogram" works out to</h2>
       <p>Because the RDA is expressed per kilogram of body weight, the document's own definition implies some arithmetic. Purely as an illustration of what the units mean — not as a target for anyone — the RDA's 0.8&nbsp;g/kg applied to a 68&nbsp;kg (150&nbsp;lb) reference adult works out to about 54&nbsp;grams per day, which is in the neighborhood of the FDA's 50-gram labeling value [1,&nbsp;2]. That is the deficiency-prevention baseline the documents describe for healthy adults; it is not a verdict on what any particular person should do.</p>
+
+      <p>The converter below does that same multiplication for any weight — for <em>every</em> published figure in this article at once, which is rather the point: there is no single official number, only a shelf of them written for different purposes.</p>
+
+      <div class="calc" id="converter">
+        <p class="calc-scope"><strong>What this is — and isn't.</strong> This is unit conversion, nothing more. It multiplies the published g/kg reference values cited in this article by a weight you enter; it asks no goal, applies no formula of its own, and makes no recommendation about what anyone should eat. Every scope caveat on this page applies to every row — these are population references for healthy adults, published by the bodies cited, not by us. Nothing you type here is stored or sent anywhere; the arithmetic runs entirely in your browser. It is published by a software company, not by a healthcare provider, and using it creates no professional relationship of any kind.</p>
+        <div class="calc-in">
+          <label for="calc-w">Body weight</label>
+          <input id="calc-w" type="number" inputmode="decimal" min="0" step="any" placeholder="180" />
+          <div class="calc-units" role="group" aria-label="Weight unit">
+            <button type="button" class="on" data-u="lb" aria-pressed="true">lb</button>
+            <button type="button" data-u="kg" aria-pressed="false">kg</button>
+          </div>
+        </div>
+        <div class="table-scroll" aria-live="polite">
+          <table>
+            <thead><tr><th>Published reference</th><th>g/kg/day</th><th>At this weight</th></tr></thead>
+            <tbody id="calc-rows"></tbody>
+          </table>
+        </div>
+        <p class="calc-note">The FDA Daily Value row never changes because it's a fixed labeling convention, not a per-kilogram value [2]. The AMDR (10–35% of calories) can't be computed from weight alone, so it isn't in the table [1]. And the reminder that bookends this article applies here word for word: a personal intake — especially with a medical condition such as kidney disease, in pregnancy, or with a history of disordered eating — is a conversation for a physician, dietitian, or other qualified health provider, not a text box.</p>
+      </div>
+      <script>
+      (function () {
+        var REFS = [
+          ["RDA — healthy adults (DRI)", 0.8, 0.8, "1"],
+          ["Athletes (AND, DC &amp; ACSM)", 1.2, 2.0, "3"],
+          ["Building and maintaining muscle (ISSN)", 1.4, 2.0, "4"],
+          ["Where gains plateaued (2018 meta-analysis)", 1.6, 1.6, "5"],
+          ["Healthy adults over 65 (PROT-AGE)", 1.0, 1.2, "6"]
+        ];
+        var input = document.getElementById("calc-w");
+        var tbody = document.getElementById("calc-rows");
+        var unit = "lb";
+        function fmt(kg, lo, hi) {
+          if (!kg) return "—";
+          var a = Math.round(lo * kg), b = Math.round(hi * kg);
+          return (a === b ? a : a + "–" + b) + " g/day";
+        }
+        function render() {
+          var v = parseFloat(input.value);
+          var kg = v > 0 ? (unit === "lb" ? v * 0.45359237 : v) : 0;
+          var html = "";
+          for (var i = 0; i < REFS.length; i++) {
+            var r = REFS[i];
+            html += "<tr><td>" + r[0] + " <span class=\"ref-n\">[" + r[3] + "]</span></td><td>" +
+              (r[1] === r[2] ? r[1].toFixed(1) : r[1].toFixed(1) + "–" + r[2].toFixed(1)) +
+              "</td><td>" + fmt(kg, r[1], r[2]) + "</td></tr>";
+          }
+          html += "<tr><td>FDA Daily Value (food labels) <span class=\"ref-n\">[2]</span></td><td>—</td><td>50 g/day, fixed</td></tr>";
+          tbody.innerHTML = html;
+        }
+        input.addEventListener("input", render);
+        var btns = document.querySelectorAll(".calc-units button");
+        btns.forEach(function (b) {
+          b.addEventListener("click", function () {
+            unit = b.dataset.u;
+            btns.forEach(function (x) {
+              var on = x === b;
+              x.classList.toggle("on", on);
+              x.setAttribute("aria-pressed", String(on));
+            });
+            render();
+          });
+        });
+        render();
+      })();
+      </script>
 
       <h2>What sports and aging researchers publish</h2>
       <p>Peer-reviewed position stands — consensus documents from professional bodies — publish higher ranges for specific populations, because they're answering a different question than the RDA:</p>
@@ -93,7 +180,7 @@
       </ul>
 
       <div class="callout">
-        <p style="margin-bottom:0;"><strong>The usual reminder:</strong> this article is general information about published reference documents, not medical or nutrition advice, and it makes no recommendation about how much protein you should eat — you'll notice it never once told you your number, because no article can. Talk to a physician, dietitian, or other qualified health provider before changing your diet — especially if you have a medical condition or a history of disordered eating.</p>
+        <p style="margin-bottom:0;"><strong>The usual reminder:</strong> this article is general information about published reference documents, not medical or nutrition advice, and it makes no recommendation about how much protein you should eat — the converter above reports published figures in your units and still never tells you your number, because no article or calculator can. Talk to a physician, dietitian, or other qualified health provider before changing your diet — especially if you have a medical condition or a history of disordered eating.</p>
       </div>
 
       <div class="post-cta">
@@ -120,7 +207,7 @@
         <a href="/jack-steel/privacy">Privacy Policy</a>
         <a href="/jack-steel/terms">Terms of Use</a>
       </div>
-      <p class="legal-note">© 2026 WristSkill Labs, LLC. General information only — not medical or nutrition advice.</p>
+      <p class="legal-note">© 2026 WristSkill Labs, LLC. General information only — not medical or nutrition advice. Jack Steel is a consumer wellness product — separate from WristSkill Labs' clinical software and from the professional practice of its members.</p>
     </footer>
   </div>
 </body>
