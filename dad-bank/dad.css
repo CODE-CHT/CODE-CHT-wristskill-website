@@ -1,0 +1,27 @@
+/* Dad Bank legal pages. Palette mirrors the app's theme.ts (Buck: navy, coral, gold on cream). */
+:root {
+  --bg: #FBF7F0; --card: #FFFFFF; --navy: #1F3A5F; --coral: #FF6F59; --gold: #E8A320;
+  --ink: #1B2430; --dim: #4F5A68; --line: #E6E1D8; --navy-soft: #E8EEF6;
+  --body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--body); background: var(--bg); color: var(--ink); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+a { color: var(--navy); font-weight: 600; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 22px; }
+nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--navy); font-weight: 900; font-size: 1.25rem; }
+.brand img { width: 40px; height: 40px; border-radius: 10px; }
+.nav-links { display: flex; gap: 18px; flex-wrap: wrap; font-size: .95rem; }
+.doc { background: var(--card); border-radius: 20px; padding: 36px 30px; margin: 8px 0 32px; box-shadow: 0 6px 14px rgba(31,58,95,.08); }
+.doc header { margin-bottom: 24px; }
+.kicker { color: var(--coral); font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: .8rem; }
+h1 { font-size: 2.1rem; color: var(--navy); line-height: 1.2; margin: 4px 0 10px; }
+h2 { font-size: 1.25rem; color: var(--navy); margin: 28px 0 8px; }
+p, ul, ol { margin: 0 0 12px; color: var(--ink); }
+ul, ol { padding-left: 22px; }
+li { margin: 4px 0; }
+.meta { color: var(--dim); font-size: .95rem; }
+.short { background: var(--navy-soft); border-radius: 14px; padding: 16px 18px; }
+.callout { background: #FFF3D6; border-radius: 14px; padding: 14px 18px; margin-top: 24px; }
+footer { padding: 8px 0 40px; color: var(--dim); font-size: .9rem; }
+footer .links { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 8px; }
