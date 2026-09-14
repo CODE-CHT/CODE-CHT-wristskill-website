@@ -212,6 +212,8 @@ details p { color: var(--dim); margin-top: 10px; font-size: 0.95rem; }
 .blog-card h2 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 1.25rem; color: var(--ink); margin-bottom: 6px; }
 .blog-card p { color: var(--dim); font-size: 0.95rem; }
 .blog-card .tag { font-family: var(--display); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; color: var(--gold); }
+.doc .blog-card h2 { margin: 0 0 6px; letter-spacing: normal; }
+.doc .blog-card p { margin: 0; }
 
 /* ---------- Footer ---------- */
 footer { border-top: 1px solid var(--line); padding: 36px 0 56px; text-align: center; }
