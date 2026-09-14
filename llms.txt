@@ -18,6 +18,7 @@ WristSkill (the app) measures wrist performance across six movement planes using
 - [Shower Tally](https://wristskill.com/shower-tally/): a family shower-tracking app for iPhone and Android — a shared real-time board of who's showered and who's overdue
 - [What is Shower Tally?](https://wristskill.com/shower-tally/what-is-shower-tally): the full product description — how it works, what Fresh / Due Soon / Overdue mean, who it is for, and what it does not do
 - [Shower Tally blog](https://wristskill.com/shower-tally/blog/): guides on hygiene routines for parents, ADHD adults, autistic children, family caregivers, and I/DD support staff
+- [Free printable shower chart for kids](https://wristskill.com/shower-tally/free-shower-chart): a free two-page PDF (a ten-step shower routine checklist and a weekly shower and hair-wash chart), with an occupational therapist's guidance on teaching the routine; no email required
 - [How often should kids shower?](https://wristskill.com/shower-tally/blog/how-often-should-kids-shower): age-by-age bathing and hair-washing frequency, sourced to the American Academy of Dermatology and American Academy of Pediatrics
 - [Frozen Fortune](https://wristskill.com/frozen-fortune/): a browser-based ice-cream-truck business game for kids 8–14
 
