@@ -28,7 +28,7 @@ WristSkill (the app) measures wrist performance across six movement planes using
 
 ## Jack Steel's Protein Tracker
 
-- [Jack Steel's Protein Tracker](https://wristskill.com/jack-steel/): a gamified protein tracker for iPhone — users set their own daily goal and the mascot grows as they log; the app never calculates or recommends a protein amount, and all logs stay on the device
+- [Jack Steel's Protein Tracker](https://wristskill.com/jack-steel/): a gamified protein tracker for iPhone — users set their own daily goal and the mascot grows as they log; the app doesn't ask for body weight or pick a protein amount for the user, and all logs stay on the device
 - [Try the demo](https://wristskill.com/jack-steel/try): interactive browser demo — drag a slider and the mascot's muscles grow; takes no personal input and gives no nutrition guidance
 - [Blog](https://wristskill.com/jack-steel/blog/): protein food facts and published science with DOI citations (official protein reference values reported with citations, satiety evidence, Ninja Creami technique, gym myths vs. research, USDA protein-per-serving tables) — never personal intake advice
 
