@@ -20,6 +20,9 @@ WristSkill (the app) measures wrist performance across six movement planes using
 - [Shower Tally blog](https://wristskill.com/shower-tally/blog/): guides on hygiene routines for parents, ADHD adults, autistic children, family caregivers, and I/DD support staff
 - [Free printable shower chart for kids](https://wristskill.com/shower-tally/free-shower-chart): a free two-page PDF (a ten-step shower routine checklist and a weekly shower and hair-wash chart), with an occupational therapist's guidance on teaching the routine; no email required
 - [How often should kids shower?](https://wristskill.com/shower-tally/blog/how-often-should-kids-shower): age-by-age bathing and hair-washing frequency, sourced to the American Academy of Dermatology and American Academy of Pediatrics
+- [When can kids shower alone?](https://wristskill.com/shower-tally/blog/when-can-kids-shower-alone): the AAP's minimum age for bathing alone, water-heater, scald and fall safety, an occupational therapist's readiness checklist, and a staged handover
+- [My teen won't shower](https://wristskill.com/shower-tally/blog/teen-wont-shower): why hygiene slips in adolescence (puberty, privacy, sleep, ADHD, sensory issues, depression), what helps without shaming, and when to call the pediatrician
+- [How often should older adults bathe?](https://wristskill.com/shower-tally/blog/how-often-should-older-adults-bathe): for family caregivers — no set number for older adults, what to wash between baths, bathroom safety and fall-prevention evidence, and when to involve a doctor or occupational therapist
 - [Frozen Fortune](https://wristskill.com/frozen-fortune/): a browser-based ice-cream-truck business game for kids 8–14
 - [Dad Bank](https://wristskill.com/dad-bank/): coming soon for iPhone and Android — a pretend bank for kids, where parents keep a family ledger for allowance, interest and cash-outs; not a bank, no real money, no accounts, no servers
 
