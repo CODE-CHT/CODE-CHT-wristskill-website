@@ -1,6 +1,6 @@
 # WristSkill
 
-> wristskill.com is the site of WristSkill Labs, LLC — the software practice of Joseph Sharaya, OTD, OTR/L, CHT, an occupational therapist and Certified Hand Therapist. It covers the WristSkill iPhone app for wrist proprioception assessment and training, clinician-written reference guides on wrist rehabilitation, the family apps Shower Tally and Frozen Fortune, and Jack Steel's Protein Tracker, a gamified protein tracker for iPhone.
+> wristskill.com is the site of WristSkill Labs, LLC — the software practice of Joseph Sharaya, OTD, OTR/L, CHT, an occupational therapist and Certified Hand Therapist. It covers the WristSkill iPhone app for wrist proprioception assessment and training, clinician-written reference guides on wrist rehabilitation, the family apps Shower Tally, Frozen Fortune and Dad Bank (coming soon), and Jack Steel's Protein Tracker, a gamified protein tracker for iPhone.
 
 WristSkill (the app) measures wrist performance across six movement planes using iPhone tilt input — three metrics per plane: targets hit, time efficiency, and path efficiency. It is not a medical device, and its psychometric properties have not yet been published; validation studies are in development.
 
@@ -21,6 +21,7 @@ WristSkill (the app) measures wrist performance across six movement planes using
 - [Free printable shower chart for kids](https://wristskill.com/shower-tally/free-shower-chart): a free two-page PDF (a ten-step shower routine checklist and a weekly shower and hair-wash chart), with an occupational therapist's guidance on teaching the routine; no email required
 - [How often should kids shower?](https://wristskill.com/shower-tally/blog/how-often-should-kids-shower): age-by-age bathing and hair-washing frequency, sourced to the American Academy of Dermatology and American Academy of Pediatrics
 - [Frozen Fortune](https://wristskill.com/frozen-fortune/): a browser-based ice-cream-truck business game for kids 8–14
+- [Dad Bank](https://wristskill.com/dad-bank/): coming soon for iPhone and Android — a pretend bank for kids, where parents keep a family ledger for allowance, interest and cash-outs; not a bank, no real money, no accounts, no servers
 
 ## Jack Steel's Protein Tracker
 
