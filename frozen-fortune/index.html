@@ -146,6 +146,74 @@
     .grownups a:hover { text-decoration: underline; }
     .grownups a:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
 
+    /* How a grown-up buys: its own card straight under PLAY, so nobody has
+       to hunt for it. Dark button, not amber: it must never compete with
+       PLAY, the kid's button. Cream on ink is 11:1; ink on amber is 5.6:1. */
+    .unlock {
+      margin-top: 28px;
+      background: var(--card);
+      border: 3px solid var(--ink);
+      border-radius: 16px;
+      box-shadow: 0 5px 0 var(--ink);
+      padding: 22px 24px 20px;
+      text-align: center;
+    }
+    .unlock-kicker {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--rosa);
+    }
+    .unlock h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.6rem, 5vw, 2rem);
+      line-height: 1.15;
+      margin-top: 4px;
+      text-wrap: balance;
+    }
+    .unlock-lead { color: var(--soft); margin: 8px auto 0; max-width: 34em; font-size: 0.98rem; }
+    .buy-btn {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 14px 32px;
+      background: var(--ink);
+      color: var(--cream);
+      border-radius: 12px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .buy-btn:hover { background: #1d2226; }
+    .buy-btn:focus-visible { outline: 4px solid var(--teal); outline-offset: 3px; }
+    .unlock-steps {
+      list-style: none;
+      counter-reset: step;
+      display: grid;
+      gap: 8px;
+      margin: 18px auto 0;
+      max-width: 30em;
+      text-align: left;
+      font-size: 0.95rem;
+      color: var(--soft);
+    }
+    .unlock-steps li { counter-increment: step; padding-left: 36px; position: relative; }
+    .unlock-steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0; top: 0;
+      width: 25px; height: 25px;
+      border-radius: 50%;
+      background: var(--amber);
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: grid;
+      place-items: center;
+    }
+    .unlock-steps strong { color: var(--ink); }
+
     footer {
       margin-top: 40px;
       border-top: 3px solid var(--ink);
@@ -170,6 +238,7 @@
       .hero { flex-direction: column-reverse; text-align: center; padding-top: 30px; }
       .hero img { width: clamp(120px, 34vw, 150px); }
       .foot-inner { flex-direction: column; text-align: center; }
+      .buy-btn { display: block; }
     }
     @media (prefers-reduced-motion: reduce) {
       .play-btn { transition: none; }
@@ -195,6 +264,20 @@
       <p class="play-note">Today's Route is free, every day · plays right in your browser · best in landscape<br>
       On iPhone: <em>Add to Home Screen</em> for the full-screen view</p>
     </div>
+
+    <section class="unlock" id="unlock" aria-labelledby="unlock-title">
+      <p class="unlock-kicker">For grown-ups</p>
+      <h2 id="unlock-title">Unlock the full summer: $10, one time</h2>
+      <p class="unlock-lead">Today's Route stays free forever. A code opens the
+        14- and 28-day routes, plus the weekend route as often as you like.
+        No subscription.</p>
+      <a class="buy-btn" href="https://wristskilllabs.lemonsqueezy.com/checkout/buy/bd958002-fcb3-4c1f-81f0-85a699cc23b1">Buy a code · $10</a>
+      <ol class="unlock-steps">
+        <li><strong>Buy a code here.</strong> It arrives in your email right away.</li>
+        <li><strong>Open the game</strong> and tap <em>I have a code</em> on the route screen.</li>
+        <li><strong>Type it in.</strong> The full summer opens on that device, even offline.</li>
+      </ol>
+    </section>
 
     <section class="grownups">
       <h2>For grown-ups</h2>
