@@ -34,4 +34,5 @@ WristSkill (the app) measures wrist performance across six movement planes using
 
 ## Other
 
+- [Services](https://wristskill.com/services): what WristSkill Labs, LLC builds for clients — short-form video clipping, websites built for SEO and AEO, on-device AI website assistants, mobile apps and App Store launch, Chrome extensions and web tools, and reference-checked occupational and hand therapy content — each linked to a shipped example, with an inquiry form
 - [Projects](https://wristskill.com/projects): portfolio of shipped software — iOS apps, Chrome extensions, and web tools
