@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- WristSkill Labs, LLC company mark: a lab flask. The WristSkill app keeps favicon.svg. -->
+  <rect width="64" height="64" rx="14" fill="#1B3A5C"/>
+  <path d="M19.5 44 Q25 40.5 32 44 T44.5 44 L47.5 50 A2.5 2.5 0 0 1 45.3 53.5 H18.7 A2.5 2.5 0 0 1 16.5 50 Z" fill="#0EA5A0"/>
+  <path d="M26 12 H38 M28 12 V27 L16.5 50 A2.5 2.5 0 0 0 18.7 53.5 H45.3 A2.5 2.5 0 0 0 47.5 50 L36 27 V12" fill="none" stroke="#FAF8F3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="31" cy="35" r="2.2" fill="#FAF8F3"/>
+  <circle cx="35.5" cy="30" r="1.5" fill="#FAF8F3"/>
+</svg>

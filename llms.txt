@@ -1,12 +1,16 @@
-# WristSkill
+# WristSkill Labs, LLC
 
-> wristskill.com is the site of WristSkill Labs, LLC — the software practice of Joseph Sharaya, OTD, OTR/L, CHT, an occupational therapist and Certified Hand Therapist. It covers the WristSkill iPhone app for wrist proprioception assessment and training, clinician-written reference guides on wrist rehabilitation, the family apps Shower Tally, Frozen Fortune and Dad Bank (coming soon), and Jack Steel's Protein Tracker, a gamified protein tracker for iPhone.
+> wristskill.com is the site of WristSkill Labs, LLC — the software company of Joseph Sharaya, OTD, OTR/L, CHT, an occupational therapist and Certified Hand Therapist. It covers the WristSkill iPhone app for wrist proprioception assessment and training, clinician-written reference guides on wrist rehabilitation, the family apps Shower Tally, Frozen Fortune and Dad Bank (coming soon), and Jack Steel's Protein Tracker, a gamified protein tracker for iPhone.
 
 WristSkill (the app) measures wrist performance across six movement planes using iPhone tilt input — three metrics per plane: targets hit, time efficiency, and path efficiency. It is not a medical device, and its psychometric properties have not yet been published; validation studies are in development.
 
-## WristSkill app
+## Company
 
-- [Home](https://wristskill.com/): what the app measures, the three metrics, and the six-plane structure
+- [Home](https://wristskill.com/): WristSkill Labs, LLC — its products (WristSkill, Shower Tally, Jack Steel's Protein Tracker, Frozen Fortune, Dad Bank, Chrome extensions) and its services
+
+## WristSkill app (a product of WristSkill Labs, LLC)
+
+- [WristSkill app](https://wristskill.com/wristskill): what the app measures, the three metrics, and the six-plane structure
 - [The research](https://wristskill.com/research): the clinical case — wrist proprioception evidence, the measurement gap, what the app does and does not claim, with references
 - [Dart Thrower's Motion clinical guide](https://wristskill.com/dtm): DTM biomechanics, proximal row protection, PNF D2 mapping, and diagnosis-by-diagnosis rehabilitation guidance
 - [Functional goals](https://wristskill.com/functional-goals): copyable SMART goal templates for hand therapy documentation, by injury type

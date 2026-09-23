@@ -253,6 +253,47 @@ em {
   color: var(--teal-accent);
 }
 
+/* Company brand (WristSkill Labs, LLC) vs. the WristSkill app brand + its "by" link. */
+.brand-labs {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand-labs img {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+}
+
+.brand sup {
+  font-size: 0.45em;
+  vertical-align: super;
+  margin-left: 1px;
+}
+
+.brand-group {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.by-labs {
+  font-size: 0.8rem;
+  color: var(--grey-muted);
+  border-bottom: none;
+  white-space: nowrap;
+}
+
+.on-dark .by-labs {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.by-labs:hover,
+.on-dark .by-labs:hover {
+  color: var(--teal-accent);
+}
+
 .nav-toggle {
   display: none;
   background: none;

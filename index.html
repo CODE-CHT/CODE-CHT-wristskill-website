@@ -3,64 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WristSkill™ — Wrist Proprioception Assessment for Clinicians</title>
-  <meta name="description" content="WristSkill measures wrist performance across six movement planes using iPhone tilt input. Built by a Certified Hand Therapist for clinicians and their patients.">
+  <title>WristSkill Labs, LLC — Apps, Websites and Clinical Tools</title>
+  <meta name="description" content="WristSkill Labs, LLC is the software company of Joseph Sharaya, OTD, OTR/L, CHT. It makes the WristSkill app, Shower Tally, Jack Steel's Protein Tracker, Frozen Fortune and Dad Bank, and builds videos, websites and apps for other businesses.">
   <link rel="canonical" href="https://wristskill.com/">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="labs-mark.svg">
 
-  <meta property="og:title" content="WristSkill — Wrist Proprioception Assessment for Clinicians">
-  <meta property="og:description" content="Three performance metrics across six movement planes, on a device you already own. Built by a Certified Hand Therapist.">
+  <meta property="og:title" content="WristSkill Labs, LLC">
+  <meta property="og:description" content="Apps, websites and clinical tools — including the WristSkill app — from Joseph Sharaya, OTD, OTR/L, CHT.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://wristskill.com/">
   <meta property="og:image" content="https://wristskill.com/images/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="WristSkill — Measure what you couldn't measure before. Screenshot of a circumduction trial inside the app.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="WristSkill — Wrist Proprioception Assessment for Clinicians">
-  <meta name="twitter:description" content="Three performance metrics across six movement planes, on a device you already own.">
+  <meta name="twitter:title" content="WristSkill Labs, LLC">
+  <meta name="twitter:description" content="Apps, websites and clinical tools, including the WristSkill app.">
   <meta name="twitter:image" content="https://wristskill.com/images/og-image.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script>document.documentElement.classList.add('js')</script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "WristSkill",
-    "operatingSystem": "iOS",
-    "applicationCategory": "HealthApplication",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "description": "Tilt-based wrist performance assessment across six movement planes. Built by a Certified Hand Therapist for clinical use.",
-    "author": {
-      "@type": "Person",
-      "name": "Joseph Sharaya",
-      "jobTitle": "Certified Hand Therapist",
-      "honorificSuffix": "OTD, OTR/L, CHT"
-    },
-    "url": "https://apps.apple.com/us/app/wristskill/id6762021194"
-  }
-  </script>
+  <style>
+    .hero-split { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 3rem; align-items: center; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .icon-wall { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 330px; margin-left: auto; }
+    .icon-wall a, .icon-wall span { display: block; border-bottom: 0; }
+    .icon-wall img { width: 100%; height: auto; aspect-ratio: 1; border-radius: 22%; box-shadow: 0 10px 24px rgba(0,0,0,0.3); transition: transform 0.3s var(--ease); }
+    .icon-wall a:hover img { transform: translateY(-4px); }
+    #products .metric-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    .product-card { display: flex; flex-direction: column; }
+    .product-card .product-icon { width: 64px; height: 64px; border-radius: 16px; margin-bottom: 1.25rem; }
+    .product-card .kind { font-size: 0.8rem; color: var(--grey-muted); margin: -0.25rem 0 0.75rem; }
+    .product-card > p:not(.kind):not(.note) { margin-bottom: 1rem; }
+    .product-card .note { font-size: 0.82rem; color: var(--grey-muted); }
+    .product-card .go { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--grey-border); font-size: 0.9rem; font-weight: 500; }
+    .product-card .go a { border-bottom: 0; }
+    .svc-icon { display: inline-grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 10px; background: rgba(14,165,160,0.1); color: var(--teal-dark); margin-bottom: 1rem; }
+    .svc-icon svg { width: 1.4rem; height: 1.4rem; }
+    .founder { display: flex; gap: 1.5rem; align-items: center; }
+    .founder img { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--teal); flex-shrink: 0; }
+    .founder p { margin-bottom: 0.5rem; }
+    @media (max-width: 800px) {
+      .hero-split { grid-template-columns: 1fr; }
+      .icon-wall { margin: 0; max-width: 260px; }
+      .founder { flex-direction: column; align-items: flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce) { .icon-wall a:hover img { transform: none; } }
+  </style>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "WristSkill",
+    "name": "WristSkill Labs, LLC",
     "url": "https://wristskill.com/",
-    "founder": {
-      "@type": "Person",
-      "name": "Joseph Sharaya",
-      "honorificSuffix": "OTD, OTR/L, CHT"
-    }
+    "logo": "https://wristskill.com/labs-mark.svg",
+    "email": "wristskillapp@gmail.com",
+    "founder": { "@type": "Person", "name": "Joseph Sharaya", "honorificSuffix": "OTD, OTR/L, CHT" },
+    "owns": [
+      { "@type": "SoftwareApplication", "name": "WristSkill", "url": "https://wristskill.com/wristskill" },
+      { "@type": "SoftwareApplication", "name": "Shower Tally", "url": "https://wristskill.com/shower-tally/" },
+      { "@type": "SoftwareApplication", "name": "Jack Steel's Protein Tracker", "url": "https://wristskill.com/jack-steel/" },
+      { "@type": "SoftwareApplication", "name": "Frozen Fortune", "url": "https://wristskill.com/frozen-fortune/" },
+      { "@type": "SoftwareApplication", "name": "Dad Bank", "url": "https://wristskill.com/dad-bank/" }
+    ]
   }
   </script>
 </head>
@@ -69,222 +77,131 @@
 
   <nav class="site-nav on-dark">
     <div class="nav-inner">
-      <a href="index" class="brand">WristSkill</a>
+      <a href="/" class="brand brand-labs"><img src="labs-mark.svg" alt="" width="28" height="28">WristSkill Labs</a>
       <button class="nav-toggle" aria-label="Open menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
       <ul class="nav-links">
-        <li><a href="research">Research</a></li>
-        <li><a href="functional-goals">Functional Goals</a></li>
-        <li><a href="about">About</a></li>
-        <li><a href="projects">Projects</a></li>
+        <li><a href="/#products">Products</a></li>
         <li><a href="services">Services</a></li>
-        <li><a href="https://apps.apple.com/us/app/wristskill/id6762021194" class="btn btn-primary">Download</a></li>
+        <li><a href="clinical">Clinical</a></li>
+        <li><a href="projects">Projects</a></li>
+        <li><a href="services#contact" class="btn btn-primary">Get a quote</a></li>
       </ul>
     </div>
   </nav>
 
   <main id="main">
 
-  <header class="hero">
-    <div class="hero-inner">
+  <header class="page-header">
+    <div class="container hero-split">
       <div>
-        <span class="eyebrow eyebrow-light fade-in">Wrist proprioception · assessment and training</span>
-        <h1 class="fade-in">Measure what you <em>couldn't</em> measure before.</h1>
-        <p class="lead fade-in">Tilt-based wrist performance across six movement planes. Built by a Certified Hand Therapist for the clinicians and patients who need it.</p>
-        <p class="hero-substantiation fade-in">
-          Goniometer apps measure joint angles. Exercise apps track adherence. Research robots measure proprioceptive thresholds in a lab. WristSkill™ measures <em>how well</em> the wrist moves across six movement planes — on a device you already own.
-        </p>
-        <div class="hero-cta fade-in">
-          <a href="https://apps.apple.com/us/app/wristskill/id6762021194" class="btn btn-primary btn-large">Download on the App Store</a>
-          <a href="research" class="btn btn-ghost btn-large">Read the research</a>
-        </div>
-        <div class="hero-secondary fade-in">
-          <span><a href="about#research-partners">Research partnerships →</a></span>
-          <span><a href="about#for-clinics">For clinics →</a></span>
-        </div>
+        <span class="eyebrow">WristSkill Labs, LLC</span>
+        <h1>Apps, websites and clinical tools.</h1>
+        <p class="lead">WristSkill Labs is the software company of Joseph Sharaya, OTD, OTR/L, CHT. It makes its own products, including the WristSkill app, and builds videos, websites and apps for other businesses.</p>
+        <p class="hero-actions on-dark"><a href="#products" class="btn btn-primary">See the products</a> <a href="services" class="btn btn-ghost">Work with us</a></p>
       </div>
-      <div class="hero-visual fade-in">
-        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract diagram of six wrist movement planes converging on a central point, with the Dart Thrower's Motion arc highlighted">
-          <defs>
-            <radialGradient id="center-glow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#5DCAA5" stop-opacity="0.9"/>
-              <stop offset="60%" stop-color="#0EA5A0" stop-opacity="0.3"/>
-              <stop offset="100%" stop-color="#0EA5A0" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-
-          <!-- Outer ring -->
-          <circle cx="200" cy="200" r="170" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-          <circle cx="200" cy="200" r="135" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="2 6"/>
-          <circle cx="200" cy="200" r="95" fill="none" stroke="rgba(93,202,165,0.2)" stroke-width="1"/>
-
-          <!-- Six movement planes as lines -->
-          <g stroke="rgba(255,255,255,0.35)" stroke-width="1" stroke-linecap="round">
-            <line x1="30" y1="200" x2="370" y2="200"/>
-            <line x1="200" y1="30" x2="200" y2="370"/>
-            <line x1="80" y1="80" x2="320" y2="320"/>
-            <line x1="320" y1="80" x2="80" y2="320"/>
-          </g>
-
-          <!-- DTM D2 arc highlighted -->
-          <path d="M 100 100 Q 200 20 300 100" fill="none" stroke="#5DCAA5" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-          <path d="M 100 300 Q 200 380 300 300" fill="none" stroke="#5DCAA5" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-
-          <!-- Axis endpoint dots -->
-          <g fill="rgba(255,255,255,0.55)">
-            <circle cx="30" cy="200" r="3"/>
-            <circle cx="370" cy="200" r="3"/>
-            <circle cx="200" cy="30" r="3"/>
-            <circle cx="200" cy="370" r="3"/>
-            <circle cx="80" cy="80" r="3"/>
-            <circle cx="320" cy="320" r="3"/>
-            <circle cx="320" cy="80" r="3"/>
-            <circle cx="80" cy="320" r="3"/>
-          </g>
-
-          <!-- Center glow + ball -->
-          <circle cx="200" cy="200" r="60" fill="url(#center-glow)"/>
-          <circle cx="200" cy="200" r="8" fill="#5DCAA5"/>
-          <circle cx="200" cy="200" r="14" fill="none" stroke="#5DCAA5" stroke-width="1" opacity="0.5"/>
-        </svg>
+      <div class="icon-wall" aria-label="Products">
+        <a href="wristskill"><img src="favicon.svg" alt="WristSkill" width="160" height="160"></a>
+        <a href="/shower-tally/"><img src="images/labs/shower-tally.png" alt="Shower Tally" width="160" height="160"></a>
+        <a href="/jack-steel/"><img src="images/labs/jack-steel.png" alt="Jack Steel's Protein Tracker" width="160" height="160"></a>
+        <a href="/frozen-fortune/"><img src="images/labs/frozen-fortune.png" alt="Frozen Fortune" width="160" height="160"></a>
+        <a href="/dad-bank/"><img src="images/labs/dad-bank.png" alt="Dad Bank" width="160" height="160"></a>
+        <a href="services"><img src="labs-mark.svg" alt="WristSkill Labs services" width="160" height="160"></a>
       </div>
     </div>
   </header>
 
-  <section class="screenshot-strip">
-    <div class="screenshot-strip-head fade-in">
-      <span class="eyebrow">Inside the app</span>
-      <h2>Three screens from a WristSkill session.</h2>
-      <p>A patient selects a mode, moves through six 30-second trials guided by tilt, and returns session-over-session to track change.</p>
-    </div>
-    <div class="phone-row">
-      <figure class="phone-frame fade-in">
-        <img src="images/screenshot-menu.png" alt="WristSkill main menu showing Performance Mode, Free Play, View Progress, About This App, and About the Metrics options" width="1179" height="2556" loading="lazy">
-        <figcaption class="phone-caption">Main menu</figcaption>
-      </figure>
-      <figure class="phone-frame fade-in">
-        <img src="images/screenshot-linear.png" alt="Mid-trial screen showing a red ball moving toward a teal target with Trial 1 of 6 and Time 25 indicators" width="1179" height="2556" loading="lazy">
-        <figcaption class="phone-caption">Linear-plane trial</figcaption>
-      </figure>
-      <figure class="phone-frame fade-in">
-        <img src="images/screenshot-circle.png" alt="Circumduction trial showing a circle guide with ball and target on its circumference during Trial 5 of 6" width="1179" height="2556" loading="lazy">
-        <figcaption class="phone-caption">Circumduction trial</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="section section-cream">
+  <section class="section section-cream" id="products">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow fade-in">What it does</span>
-        <h2 class="fade-in">An iPhone becomes a wrist performance measurement tool.</h2>
-        <p class="lead fade-in">The patient holds the phone, tilts it to guide a ball toward targets on screen, and WristSkill records how they moved — across six movement planes, three performance metrics per plane. Baselines and session history are stored on the device, with optional progress sharing when the user chooses it.</p>
+        <span class="eyebrow">Products</span>
+        <h2>What WristSkill Labs makes</h2>
       </div>
-    </div>
-  </section>
-
-  <section class="section section-white">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow fade-in">Three metrics · every session</span>
-        <h2 class="fade-in">Performance, quantified.</h2>
-        <p class="lead fade-in" style="font-size: 1.1rem;">The three metrics reflect the dynamic kinesthetic and visuomotor components of wrist performance — not static joint position sense. They are measured against each patient's own prior sessions; WristSkill does not yet have published normative values.</p>
-      </div>
-
       <div class="metric-grid">
-        <div class="metric-card fade-in">
-          <span class="eyebrow">Targets hit</span>
-          <h3>More is better.</h3>
-          <p>The number of targets reached during each 30-second trial. Typical ranges fall between 5 and 15 per trial, depending on ability and condition.</p>
-        </div>
-        <div class="metric-card fade-in">
-          <span class="eyebrow">Time efficiency</span>
-          <h3>Higher is better.</h3>
-          <p>How quickly the ball reached each target relative to the theoretical minimum time — expressed as a percentage. Higher scores reflect faster, more coordinated motor responses.</p>
-        </div>
-        <div class="metric-card fade-in">
-          <span class="eyebrow">Path efficiency</span>
-          <h3>100% is perfect.</h3>
-          <p>How directly the wrist guided the ball to the target, as a percentage. Lower values indicate overshoot, wandering, or correction.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-cream">
-    <div class="container">
-      <div class="split-narrow">
-        <div class="fade-in">
-          <span class="eyebrow">Six movement planes</span>
-          <h2>Assessment across the full functional envelope.</h2>
-          <p>The six-plane structure is intentional. It covers cardinal, diagonal, and rotational movement. Because the phone is held in the hand, forearm rotation contributes to every plane alongside wrist flexion-extension and radial-ulnar deviation — these are functional combinations, not isolated cardinal motions.</p>
-          <p>Diagonal 1 and Diagonal 2 correspond to the PNF D1 and D2 wrist endpoints. The specific wrist motion for each diagonal differs between right and left hand. The D2 diagonal includes the wrist endpoint of the Dart Thrower's Motion — a functionally important plane in hand therapy.</p>
-          <p><a href="dtm">Read more about Dart Thrower's Motion →</a></p>
-        </div>
-        <div class="plane-list fade-in">
-          <span class="eyebrow">The six planes</span>
-          <ul>
-            <li>Horizontal</li>
-            <li>Vertical</li>
-            <li class="highlight">Diagonal 1 &nbsp;· &nbsp;PNF D1</li>
-            <li class="highlight">Diagonal 2 &nbsp;· &nbsp;PNF D2</li>
-            <li>Circle clockwise</li>
-            <li>Circle counter-clockwise</li>
-          </ul>
-        </div>
+        <article class="metric-card product-card">
+          <img class="product-icon" src="favicon.svg" alt="" width="64" height="64">
+          <h3>WristSkill™</h3>
+          <p class="kind">iPhone app · for clinicians</p>
+          <p>Measures wrist performance across six movement planes using iPhone tilt input. Built by a Certified Hand Therapist for clinicians and their patients.</p>
+          <p class="note">Not a medical device.</p>
+          <p class="go"><a href="wristskill">About the WristSkill app →</a></p>
+        </article>
+        <article class="metric-card product-card">
+          <img class="product-icon" src="images/labs/shower-tally.png" alt="" width="64" height="64" loading="lazy">
+          <h3>Shower Tally</h3>
+          <p class="kind">iPhone and Android · for families</p>
+          <p>A family shower tracker: a shared, real-time board of who's showered and who's overdue.</p>
+          <p class="go"><a href="/shower-tally/">Visit Shower Tally →</a></p>
+        </article>
+        <article class="metric-card product-card">
+          <img class="product-icon" src="images/labs/jack-steel.png" alt="" width="64" height="64" loading="lazy">
+          <h3>Jack Steel's Protein Tracker</h3>
+          <p class="kind">iPhone · consumer wellness</p>
+          <p>A gamified protein tracker. You set your own daily goal, and Jack Steel grows as you log.</p>
+          <p class="note">Jack Steel is a consumer wellness product — separate from WristSkill Labs' clinical software and from the professional practice of its members.</p>
+          <p class="go"><a href="/jack-steel/">Visit Jack Steel →</a></p>
+        </article>
+        <article class="metric-card product-card">
+          <img class="product-icon" src="images/labs/frozen-fortune.png" alt="" width="64" height="64" loading="lazy">
+          <h3>Frozen Fortune</h3>
+          <p class="kind">Browser game · for kids 8–14</p>
+          <p>A browser-based business game: kids run their own ice-cream truck.</p>
+          <p class="go"><a href="/frozen-fortune/">Visit Frozen Fortune →</a></p>
+        </article>
+        <article class="metric-card product-card">
+          <img class="product-icon" src="images/labs/dad-bank.png" alt="" width="64" height="64" loading="lazy">
+          <h3>Dad Bank</h3>
+          <p class="kind">Coming soon · iPhone and Android</p>
+          <p>A pretend bank for kids. Parents keep a family ledger for allowance, interest and cash-outs.</p>
+          <p class="note">Dad Bank is not a bank and never holds, moves or invests real money.</p>
+          <p class="go"><a href="/dad-bank/">Get launch updates →</a></p>
+        </article>
+        <article class="metric-card product-card">
+          <span class="svc-icon product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z"/></svg></span>
+          <h3>Chrome extensions</h3>
+          <p class="kind">Free · Chrome Web Store</p>
+          <p>AngleSnap, SlopShield and Promptello: small browser tools, each built to fix one annoyance.</p>
+          <p class="go"><a href="projects">See all projects →</a></p>
+        </article>
       </div>
     </div>
   </section>
 
   <section class="section section-white">
     <div class="container">
-      <div class="split">
-        <div class="fade-in">
-          <span class="eyebrow">Practice beyond the assessment</span>
-          <h2>Free Play for ongoing training.</h2>
-          <p>Alongside the six-plane Performance Mode, WristSkill includes a Free Play mode — shrinking-ring trials in each of the six planes, plus a Random mode that mixes directions. Clinicians use Free Play for training between assessments; patients use it for daily home practice.</p>
-        </div>
-        <div class="fade-in">
-          <figure class="phone-frame phone-solo">
-            <img src="images/screenshot-freeplay.png" alt="Free Play shrinking-ring practice screen with target and ball inside a contracting ring" width="1179" height="2556" loading="lazy">
-            <figcaption class="phone-caption">Free Play · shrinking ring</figcaption>
-          </figure>
-        </div>
+      <div class="section-head">
+        <span class="eyebrow">Work with WristSkill Labs</span>
+        <h2>Need something built?</h2>
+      </div>
+      <div class="metric-grid">
+        <article class="metric-card product-card">
+          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/> <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/> <path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/> <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg></span>
+          <h3>For any business</h3>
+          <p>Short videos for your socials, websites and landing pages, help showing up on Google and in AI answers, and iPhone and Android apps.</p>
+          <p class="go"><a href="services">See services →</a></p>
+        </article>
+        <article class="metric-card product-card">
+          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v16"/> <path d="m16 12 2 2 4-4"/> <path d="M22 6V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2h4.001A2 2 0 0022 17v-1.344"/></svg></span>
+          <h3>For clinicians, clinics and schools</h3>
+          <p>The Edema Management of the Upper Extremity course, reference-checked clinical writing, and custom measurement tools.</p>
+          <p class="go"><a href="clinical">See clinical services →</a></p>
+        </article>
       </div>
     </div>
   </section>
 
   <section class="section section-cream">
-    <div class="container">
-      <div class="split">
-        <div class="fade-in">
-          <span class="eyebrow">Right and left · separately</span>
-          <h2>Symmetry visible at a glance.</h2>
-          <p>Every session records which hand was tested. Baselines, rolling session history, and progress views are kept independent for each side, so asymmetries become obvious during follow-up.</p>
-        </div>
-        <div class="fade-in">
-          <span class="eyebrow">Local by default</span>
-          <h2>Progress stays private unless it is shared.</h2>
-          <p>WristSkill stores session results, baselines, and session history in local storage on the device. The app does not use accounts, cloud sync, or advertising. It uses Firebase (Google) to collect anonymous usage analytics — no names, emails, or health information — to help identify crashes and improve the app. Progress sharing happens only when the user actively chooses to share it through another app or service.</p>
+    <div class="container-narrow">
+      <div class="founder">
+        <img src="images/services/joe.jpg" alt="Joseph Sharaya" width="240" height="240" loading="lazy">
+        <div>
+          <span class="eyebrow">Founder</span>
+          <p><strong>Joseph Sharaya, OTD, OTR/L, CHT</strong></p>
+          <p>An occupational therapist and Certified Hand Therapist. Every WristSkill Labs product started as a problem Joseph ran into at work or at home.</p>
+          <p><a href="projects">See everything Joseph has built →</a></p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section section-navy" id="download">
-    <div class="container">
-      <div class="section-head centered">
-        <span class="eyebrow eyebrow-light fade-in">Ready to try it</span>
-        <h2 class="fade-in">WristSkill is available on the App Store.</h2>
-        <p class="lead fade-in" style="margin-left: auto; margin-right: auto;">Built for hand therapists, occupational therapists, and the patients they work with.</p>
-      </div>
-      <div style="text-align: center; margin-top: 2rem;">
-        <a href="https://apps.apple.com/us/app/wristskill/id6762021194" class="btn btn-primary btn-large fade-in">Download on the App Store</a>
-      </div>
-      <p style="text-align: center; margin-top: 2rem; font-size: 0.85rem; color: rgba(255,255,255,0.5);" class="fade-in">
-        Interested in research collaboration? See the <a href="about" style="color: var(--teal-accent); border-bottom-color: rgba(93,202,165,0.3);">About page</a>.
-      </p>
     </div>
   </section>
 
@@ -294,41 +211,43 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <span class="brand">WristSkill</span>
-          <p>A wrist proprioception assessment and training app developed by WristSkill Labs, LLC.</p>
-          <p class="footer-availability">Currently available on iPhone. Not a medical device.</p>
+          <a href="/" class="brand brand-labs"><img src="labs-mark.svg" alt="" width="28" height="28">WristSkill Labs</a>
+          <p>WristSkill Labs, LLC makes apps, websites and clinical tools. WristSkill™, the wrist proprioception assessment app, is one of its products.</p>
+          <p class="footer-availability"><a href="mailto:wristskillapp@gmail.com">wristskillapp@gmail.com</a></p>
         </div>
         <div class="footer-col">
-          <h4>Learn</h4>
+          <h4>Products</h4>
           <ul>
-            <li><a href="research">The research</a></li>
-            <li><a href="dtm">Dart Thrower's Motion</a></li>
-            <li><a href="functional-goals">Functional goals</a></li>
-            <li><a href="ulnar-sided-wrist-pain">Ulnar-sided wrist pain</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Other apps</h4>
-          <ul>
+            <li><a href="/wristskill">WristSkill</a></li>
             <li><a href="/shower-tally/">Shower Tally</a></li>
             <li><a href="/jack-steel/">Jack Steel's Protein Tracker</a></li>
             <li><a href="/frozen-fortune/">Frozen Fortune</a></li>
+            <li><a href="/dad-bank/">Dad Bank</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Project</h4>
+          <h4>WristSkill resources</h4>
           <ul>
-            <li><a href="about">About</a></li>
-            <li><a href="services">Services</a></li>
-            <li><a href="clinical">Clinical services</a></li>
-            <li><a href="about#research-partners">Research partners</a></li>
-            <li><a href="privacy">Privacy policy</a></li>
+            <li><a href="/research">The research</a></li>
+            <li><a href="/dtm">Dart Thrower's Motion</a></li>
+            <li><a href="/functional-goals">Functional goals</a></li>
+            <li><a href="/ulnar-sided-wrist-pain">Ulnar-sided wrist pain</a></li>
+            <li><a href="/about">About WristSkill</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/clinical">Clinical services</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/privacy">Privacy policy</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-legal">
-        <span>© 2026 WristSkill Labs, LLC</span>
-        <span>Not a medical device. Nothing on this site is medical advice.</span>
+        <span>© 2026 WristSkill Labs, LLC. WristSkill™ is a product of WristSkill Labs, LLC.</span>
+        <span>WristSkill is not a medical device. Nothing on this site is medical advice.</span>
       </div>
     </div>
   </footer>
