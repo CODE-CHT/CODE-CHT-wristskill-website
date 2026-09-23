@@ -35,13 +35,21 @@
     .course .btn { margin-top: 2rem; }
     .service-card { display: flex; flex-direction: column; }
     .service-card .proof { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--grey-border); font-size: 0.88rem; color: var(--grey-muted); }
-    .service-card p + .proof { margin-top: 1.25rem; }
+    .service-card > p:not(.proof) { margin-bottom: 1.25rem; }
     .service-card .proof a { color: var(--teal-dark); }
     .inquiry-form { display: grid; gap: 1rem; max-width: 560px; }
     .inquiry-form label { display: grid; gap: 0.35rem; font-weight: 500; font-size: 0.95rem; }
     .inquiry-form input, .inquiry-form select, .inquiry-form textarea { font: inherit; padding: 0.7rem 0.85rem; border: 1px solid var(--grey-border); border-radius: 8px; background: var(--white); color: var(--text-dark); }
     .inquiry-form textarea { min-height: 8rem; resize: vertical; }
     .inquiry-form .btn { justify-self: start; border: 0; cursor: pointer; }
+    .facts { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1.25rem !important; padding: 0; }
+    .facts li { font-size: 0.85rem; font-weight: 500; color: var(--teal-dark); background: rgba(14,165,160,0.1); border-radius: 999px; padding: 0.25rem 0.8rem; }
+    .instructor { display: flex; gap: 1.25rem; align-items: flex-start; margin-top: 0.75rem; }
+    .instructor img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--teal); flex-shrink: 0; }
+    .instructor ul { margin-top: 0.5rem !important; }
+    .svc-icon { display: inline-grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 10px; background: rgba(14,165,160,0.1); color: var(--teal-dark); margin-bottom: 1rem; }
+    .svc-icon svg { width: 1.4rem; height: 1.4rem; }
+    @media (max-width: 560px) { .instructor { flex-direction: column; } }
   </style>
 
   <script type="application/ld+json">
@@ -98,6 +106,11 @@
       <div class="course">
         <span class="eyebrow">Course</span>
         <h2>Edema Management of the Upper Extremity</h2>
+        <ul class="facts">
+          <li>Live on Zoom or on-site</li>
+          <li>About 3 hours</li>
+          <li>4 learning objectives</li>
+        </ul>
         <p>Practical, evidence-based edema management for orthopedic conditions of the hand and upper extremity. Offered live on Zoom, or booked for your clinic, school or group.</p>
 
         <h3>Learning objectives</h3>
@@ -122,12 +135,17 @@
         <p>Taught in person in Indianapolis, Indiana (March 2025) and in Illinois (November 2025). The in-person course runs about three hours.</p>
 
         <h3>Your instructor</h3>
-        <p><strong>Joseph Sharaya, OTD, OTR/L, CHT</strong></p>
-        <ul>
+        <div class="instructor">
+          <img src="images/services/joe.jpg" alt="Joseph Sharaya" width="240" height="240" loading="lazy">
+          <div>
+            <p><strong>Joseph Sharaya, OTD, OTR/L, CHT</strong></p>
+            <ul>
           <li>Certified Hand Therapist, practicing and licensed in 10 states</li>
           <li>Adjunct faculty, Indiana Wesleyan University Doctor of Occupational Therapy program (2023–2025): Human Motion and Therapeutic Modalities</li>
           <li>Invited guest lecturer, Valparaiso University Doctor of Occupational Therapy program (2026)</li>
         </ul>
+          </div>
+        </div>
 
         <a href="#contact" class="btn btn-primary">Request dates and pricing</a>
       </div>
@@ -141,11 +159,13 @@
       </div>
       <div class="metric-grid">
         <article class="metric-card service-card" id="writing">
+          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v16"/> <path d="m16 12 2 2 4-4"/> <path d="M22 6V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2h4.001A2 2 0 0022 17v-1.344"/></svg></span>
           <h3>Reference-checked clinical writing</h3>
           <p>Clinical guides, patient education and website content in occupational therapy and hand therapy. Every citation is checked against PubMed or Crossref, and every source is read to confirm it supports the sentence it's cited for.</p>
           <p class="proof">Examples: the <a href="dtm">Dart Thrower's Motion guide</a> and <a href="research">the research page</a>.</p>
         </article>
         <article class="metric-card service-card" id="tools">
+          <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/> <path d="m14.5 12.5 2-2"/> <path d="m11.5 9.5 2-2"/> <path d="m8.5 6.5 2-2"/> <path d="m17.5 15.5 2-2"/></svg></span>
           <h3>Custom clinical measurement tools</h3>
           <p>A phone app, web tool or browser extension built around the measurement your clinic, study or product needs, designed by a clinician who uses these measures.</p>
           <p class="proof">Examples: <a href="/">WristSkill</a> and <a href="https://chromewebstore.google.com/detail/anglesnap/fbbjmchgaoihoeanmgedhafdfkidmpmp">AngleSnap</a>. Neither is a medical device.</p>

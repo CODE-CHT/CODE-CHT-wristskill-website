@@ -33,7 +33,7 @@
     .service-card { display: flex; flex-direction: column; }
     .service-card .term { display: block; font-size: 0.8rem; color: var(--grey-muted); margin-top: 0.75rem; }
     .service-card .proof { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--grey-border); font-size: 0.88rem; color: var(--grey-muted); }
-    .service-card p + .proof, .service-card .term + .proof { margin-top: 1.25rem; }
+    .service-card > p:not(.proof), .service-card .term { margin-bottom: 1.25rem; }
     .service-card .proof a { color: var(--teal-dark); }
     .who { font-size: 1rem; color: var(--grey-muted); margin-top: 1rem; }
     .steps { counter-reset: step; list-style: none; padding: 0; display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
@@ -44,6 +44,30 @@
     .inquiry-form input, .inquiry-form select, .inquiry-form textarea { font: inherit; padding: 0.7rem 0.85rem; border: 1px solid var(--grey-border); border-radius: 8px; background: var(--white); color: var(--text-dark); }
     .inquiry-form textarea { min-height: 8rem; resize: vertical; }
     .inquiry-form .btn { justify-self: start; border: 0; cursor: pointer; }
+    .hero-split { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 2rem; align-items: end; }
+    .lineup { display: flex; align-items: flex-end; justify-content: center; margin-bottom: -4rem; }
+    .lineup img { height: auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25)); }
+    .lineup-jack { width: 44%; position: relative; z-index: 2; margin: 0 -4%; }
+    .lineup-rosa { width: 28%; }
+    .lineup-sudsy { width: 34%; }
+    .svc-icon { display: inline-grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 10px; background: rgba(14,165,160,0.1); color: var(--teal-dark); margin-bottom: 1rem; }
+    .svc-icon svg { width: 1.4rem; height: 1.4rem; }
+    .work-strip { background: var(--white); padding: 2.5rem 0; border-bottom: 1px solid var(--grey-border); }
+    .work-strip .eyebrow { margin-bottom: 1rem; }
+    .work-row { list-style: none; padding: 0 0 0.5rem; margin: 0; display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; }
+    .work-row li { flex: 0 0 auto; scroll-snap-align: start; }
+    .work-row a { display: block; text-decoration: none; border-bottom: 0; color: var(--text-body); font-size: 0.85rem; }
+    .work-row img { display: block; height: 170px; width: auto; border-radius: 8px; border: 1px solid var(--grey-border); object-fit: cover; object-position: top; transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+    .work-row li.tall img { width: 96px; }
+    .work-row a:hover img { transform: translateY(-3px); box-shadow: 0 10px 22px rgba(27,58,92,0.12); }
+    .work-row span { display: block; margin-top: 0.5rem; }
+    @media (max-width: 800px) {
+      .hero-split { grid-template-columns: 1fr; }
+      .lineup { max-width: 320px; margin: 1rem auto -4rem; }
+      .work-row img { height: 140px; }
+      .work-row li.tall img { width: 80px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .work-row img { transition: none; } .work-row a:hover img { transform: none; } }
   </style>
 
   <script type="application/ld+json">
@@ -65,10 +89,9 @@
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing pages", "description": "One-page sites built to sell one product, offer or launch." } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO, AEO and GEO", "description": "Helping a business show up in Google search and in AI answers like ChatGPT and Perplexity." } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website chat assistant", "description": "A chat assistant that answers customer questions from your site's content and collects leads." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom web tools", "description": "Quote calculators, booking helpers and other single-purpose tools." } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "iPhone and Android apps" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "App Store launch", "description": "Screenshots, preview videos, App Review, and in-app purchases and subscriptions." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chrome extensions" } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom tools and Chrome extensions", "description": "Quote calculators, booking helpers, single-purpose web tools and Chrome extensions." } }
       ]
     }
   }
@@ -97,15 +120,35 @@
   <main id="main">
 
   <header class="page-header">
-    <div class="container-narrow">
+    <div class="container hero-split">
+      <div>
       <a class="cross-link" href="clinical">Clinician, clinic or school? See clinical services →</a><br>
       <span class="eyebrow">WristSkill Labs, LLC · Services</span>
       <h1>Videos, websites and apps for your business.</h1>
       <p class="lead">You run the business. I make the videos, the website and the app that help people find you. I built all of this for my own products first, and every service below links to one.</p>
       <p class="who">For plumbers, salons, restaurants, contractors, creators, startups — anyone.</p>
       <p><a href="#contact" class="btn btn-primary">Get a quote</a></p>
+      </div>
+      <div class="lineup" role="img" aria-label="Brand characters made by WristSkill Labs: Jack Steel, Sudsy the duck and Grandma Rosa">
+        <img src="images/services/rosa.png" alt="" width="214" height="400" class="lineup-rosa">
+        <img src="images/services/jack-steel.png" alt="" width="311" height="480" class="lineup-jack">
+        <img src="images/services/sudsy.png" alt="" width="300" height="300" class="lineup-sudsy">
+      </div>
     </div>
   </header>
+
+  <section class="work-strip" aria-labelledby="work-title">
+    <div class="container">
+      <h2 id="work-title" class="eyebrow">Recent work</h2>
+      <ul class="work-row">
+        <li><a href="/jack-steel/"><img src="images/services/js-landing.jpg" alt="Jack Steel's Protein Tracker landing page" width="720" height="450" loading="lazy"><span>Landing page</span></a></li>
+        <li><a href="/"><img src="images/services/home.jpg" alt="wristskill.com home page" width="720" height="450" loading="lazy"><span>Website</span></a></li>
+        <li class="tall"><a href="/shower-tally/"><img src="images/services/showertally.jpg" alt="Shower Tally app home screen" width="414" height="900" loading="lazy"><span>iPhone and Android app</span></a></li>
+        <li class="tall"><a href="https://code-cht.github.io/prior-use-estimator/"><img src="images/services/prioruse.jpg" alt="Prior Use Estimator web tool" width="367" height="720" loading="lazy"><span>Web tool</span></a></li>
+        <li><a href="#web"><img src="images/screenshot-assistant.svg" alt="WristSkill Labs chat assistant" width="640" height="400" loading="lazy"><span>Chat assistant</span></a></li>
+      </ul>
+    </div>
+  </section>
 
   <section class="section section-cream">
     <div class="container">
@@ -117,16 +160,19 @@
         </div>
         <div class="metric-grid">
           <article class="metric-card service-card">
+            <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.296 3.464 3.02 3.956"/> <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3z"/> <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/> <path d="m6.18 5.276 3.1 3.899"/></svg></span>
             <h3>Short videos for your socials</h3>
             <p>Send me your job-site clips, tips or long videos. I cut them into short, captioned Reels, TikToks and YouTube Shorts, ready to post.</p>
             <p class="proof">Example: the Reels for Shower Tally and Jack Steel's Protein Tracker.</p>
           </article>
           <article class="metric-card service-card">
+            <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10V9"/> <path d="M7.084 14.302a5.12 5.12 0 009.833 0 .24.24 0 00-.235-.302H7.32a.24.24 0 00-.235.302"/> <path d="M9 10V9"/> <circle cx="12" cy="12" r="10"/></svg></span>
             <h3>Trend and meme videos</h3>
             <p>Funny, on-trend clips starring a character made for your brand, timed to the sound that's going around.</p>
             <p class="proof">Example: the Shower Tally trend reels.</p>
           </article>
           <article class="metric-card service-card">
+            <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/> <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/> <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/> <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/> <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg></span>
             <h3>A mascot or character for your brand</h3>
             <p>A cartoon character people remember, drawn in poses you can use on your site, your truck and your videos.</p>
             <p class="proof">Example: Jack Steel, the mascot of <a href="/jack-steel/">Jack Steel's Protein Tracker</a>.</p>
@@ -141,30 +187,29 @@
         </div>
         <div class="metric-grid">
           <article class="metric-card service-card">
+            <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/> <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/> <path d="M2 12h20"/></svg></span>
             <h3>A website that brings in customers</h3>
             <p>Fast, easy to read on a phone, with a contact form that lands in your inbox. Monthly updates are available if you'd rather not touch it yourself.</p>
             <p class="proof">Example: <a href="/">wristskill.com</a>, this site.</p>
           </article>
           <article class="metric-card service-card">
+            <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/> <path d="M3 9h18"/></svg></span>
             <h3>A landing page</h3>
             <p>One page built to do one job: sell a product, fill a sign-up list or launch something new.</p>
             <p class="proof">Example: the <a href="/jack-steel/">Jack Steel's Protein Tracker</a> page.</p>
           </article>
           <article class="metric-card service-card">
+            <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/> <circle cx="11" cy="11" r="8"/></svg></span>
             <h3>Show up on Google and in AI answers</h3>
             <p>Help your business come up when someone searches, or asks ChatGPT, for what you do near them. For a new site or the one you already have.</p>
             <span class="term">Also called SEO, AEO and GEO.</span>
             <p class="proof">Example: the <a href="/shower-tally/blog/">Shower Tally guides</a>, written to answer the questions parents actually search.</p>
           </article>
           <article class="metric-card service-card">
+            <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg></span>
             <h3>A chat assistant on your site</h3>
             <p>Answers customers' questions from your own website, any time of day, and passes you their contact details when they ask you to reach out. It runs in the visitor's browser, so there's no per-message AI bill. Works best on desktop today.</p>
             <p class="proof">Example: the WristSkill Labs Assistant, on this page.</p>
-          </article>
-          <article class="metric-card service-card">
-            <h3>Custom tools</h3>
-            <p>A quote calculator, a booking helper, or another small tool that saves you or your customers a phone call.</p>
-            <p class="proof">Example: <a href="https://code-cht.github.io/prior-use-estimator/">Prior Use Estimator</a>.</p>
           </article>
         </div>
       </div>
@@ -176,20 +221,23 @@
         </div>
         <div class="metric-grid">
           <article class="metric-card service-card">
+            <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/> <path d="M12 18h.01"/></svg></span>
             <h3>iPhone and Android apps</h3>
             <p>From first version to the app store, built to work on both platforms at once.</p>
             <span class="term">React Native / Expo.</span>
             <p class="proof">Examples: <a href="/shower-tally/">Shower Tally</a> and <a href="/jack-steel/">Jack Steel's Protein Tracker</a>.</p>
           </article>
           <article class="metric-card service-card">
+            <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/> <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/> <path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/> <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg></span>
             <h3>App Store launch</h3>
             <p>Store screenshots and preview videos, in-app purchases and subscriptions, TestFlight, and getting through Apple's review, including fixing a rejection.</p>
             <p class="proof">Example: three apps launched on the App Store.</p>
           </article>
           <article class="metric-card service-card">
-            <h3>Chrome extensions</h3>
-            <p>A small add-on to the browser that removes a step from your team's day.</p>
-            <p class="proof">Examples: AngleSnap, SlopShield and Promptello. See <a href="projects">Projects</a>.</p>
+            <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z"/></svg></span>
+            <h3>Custom tools and extensions</h3>
+            <p>A quote calculator, a booking helper, or a Chrome extension that saves you or your customers a step.</p>
+            <p class="proof">Examples: <a href="https://code-cht.github.io/prior-use-estimator/">Prior Use Estimator</a>, AngleSnap, SlopShield and Promptello. See <a href="projects">Projects</a>.</p>
           </article>
         </div>
       </div>
@@ -239,10 +287,9 @@
             <option>Landing page</option>
             <option>Google / AI search</option>
             <option>Chat assistant</option>
-            <option>Custom tool</option>
             <option>App</option>
             <option>App Store launch</option>
-            <option>Chrome extension</option>
+            <option>Custom tool or extension</option>
             <option>Not sure yet</option>
           </select>
         </label>
