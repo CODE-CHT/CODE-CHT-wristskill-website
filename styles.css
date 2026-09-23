@@ -1093,13 +1093,15 @@ article.prose > .lead {
 
 /* ------------------------------ Fade-in animation ---------------------- */
 
-.fade-in {
+/* Hidden only once JavaScript has marked the page (<html class="js">), so the
+   content still shows when scripts are off. */
+.js .fade-in {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
 }
 
-.fade-in.visible {
+.js .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1111,7 +1113,7 @@ article.prose > .lead {
 /* Visitors who turn on "reduce motion" get everything in place, no slides or smooth scrolling. */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .fade-in { opacity: 1; transform: none; }
+  .js .fade-in { opacity: 1; transform: none; }
   *, *::before, *::after {
     transition-duration: 0.01ms !important;
     transition-delay: 0s !important;
