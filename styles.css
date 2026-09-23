@@ -8,7 +8,7 @@
   --navy-dark: #142E47;
   --navy-deep: #0E2236;
   --teal: #0EA5A0;
-  --teal-dark: #0A8580;
+  --teal-dark: #087A75;
   --teal-accent: #5DCAA5;
   --cream: #FAF8F3;
   --cream-warm: #F5F1E8;
@@ -1269,11 +1269,11 @@ article.prose > .lead {
   }
 
   .page-header h1 { color: #1B3A5C; font-size: 21pt; line-height: 1.15; }
-  .page-header .eyebrow { color: #0A8580; }
+  .page-header .eyebrow { color: #087A75; }
   .page-header .lead { color: #3F4E5C; }
 
   .audience-marker {
-    color: #0A8580;
+    color: #087A75;
     background: none;
     border: none;
     padding: 0;
