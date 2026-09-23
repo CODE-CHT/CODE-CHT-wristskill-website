@@ -1099,6 +1099,7 @@ article.prose > .lead {
 }
 
 .page-header .eyebrow { color: var(--teal-accent); }
+.kicker { font-size: 1rem; font-weight: 500; color: var(--teal-accent); margin-bottom: 0.75rem; }
 .page-header h1 { color: var(--white); }
 .page-header .lead {
   color: rgba(255, 255, 255, 0.78);

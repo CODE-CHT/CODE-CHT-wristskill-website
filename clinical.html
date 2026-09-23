@@ -50,6 +50,8 @@
     .svc-icon { display: inline-grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 10px; background: rgba(14,165,160,0.1); color: var(--teal-dark); margin-bottom: 1rem; }
     .svc-icon svg { width: 1.4rem; height: 1.4rem; }
     @media (max-width: 560px) { .instructor { flex-direction: column; } }
+    :root { --grey-muted: #5E6E7E; } /* 5.2:1 on white; the site default #8A96A3 is 3.0:1 */
+    .metric-card:hover { transform: none; box-shadow: none; }
   </style>
 
   <script type="application/ld+json">
@@ -92,8 +94,8 @@
 
   <header class="page-header">
     <div class="container-narrow">
-      <a class="cross-link" href="services">Need videos, a website or an app? See all services →</a><br>
-      <span class="eyebrow">WristSkill Labs, LLC · Clinical services</span>
+      <a class="cross-link" href="services">Need videos, a website or an app? See all services</a><br>
+      <p class="kicker">WristSkill Labs, LLC</p>
       <h1>Continuing education, clinical writing and measurement tools.</h1>
       <p class="lead">From Joseph Sharaya, OTD, OTR/L, CHT, an occupational therapist and Certified Hand Therapist. For clinics, rehab groups, schools, health-tech companies and individual clinicians.</p>
       <p><a href="#contact" class="btn btn-primary">Request info</a></p>
@@ -103,7 +105,6 @@
   <section class="section section-cream" id="edema-course">
     <div class="container-narrow">
       <div class="course">
-        <span class="eyebrow">Course</span>
         <h2>Edema Management of the Upper Extremity</h2>
         <ul class="facts">
           <li>Live on Zoom or on-site</li>
