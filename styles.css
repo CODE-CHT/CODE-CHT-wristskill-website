@@ -1108,6 +1108,18 @@ article.prose > .lead {
 .hero .fade-in:nth-child(2) { transition-delay: 0.25s; }
 .hero .fade-in:nth-child(3) { transition-delay: 0.4s; }
 
+/* Visitors who turn on "reduce motion" get everything in place, no slides or smooth scrolling. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fade-in { opacity: 1; transform: none; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
 /* ------------------------------ Responsive ---------------------------- */
 
 @media (max-width: 820px) {
