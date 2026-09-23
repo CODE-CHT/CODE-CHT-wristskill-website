@@ -4,20 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services | WristSkill Labs</title>
-  <meta name="description" content="WristSkill Labs, LLC builds for small businesses and clinicians: short-form video clipping, websites built for Google and AI search (SEO/AEO), on-device AI chat assistants, mobile apps, Chrome extensions, and reference-checked health content.">
+  <meta name="description" content="WristSkill Labs, LLC makes videos, websites, landing pages and apps for any business — short videos for your socials, websites that help you show up on Google and in AI answers, chat assistants, and iPhone and Android apps.">
   <link rel="canonical" href="https://wristskill.com/services">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-  <meta property="og:title" content="Services · WristSkill Labs">
-  <meta property="og:description" content="Short-form video, websites built for search and AI answers, on-device AI assistants, apps, and extensions. Every service here is something I've already shipped for my own products.">
+  <meta property="og:title" content="Videos, websites and apps for your business · WristSkill Labs">
+  <meta property="og:description" content="Short videos for your socials, websites and landing pages that bring in customers, and apps. Built for my own products first.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://wristskill.com/services">
   <meta property="og:image" content="https://wristskill.com/images/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Services · WristSkill Labs">
-  <meta name="twitter:description" content="Short-form video, SEO/AEO websites, on-device AI assistants, apps, and extensions.">
+  <meta name="twitter:title" content="Videos, websites and apps for your business · WristSkill Labs">
+  <meta name="twitter:description" content="Short videos, websites, landing pages and apps for any business.">
   <meta name="twitter:image" content="https://wristskill.com/images/og-image.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,10 +26,16 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
+    .cross-link { display: inline-block; margin-bottom: 1.25rem; font-size: 0.9rem; color: var(--teal-accent); text-decoration: none; border: 1px solid rgba(93,202,165,0.4); border-radius: 999px; padding: 0.3rem 0.9rem; }
+    .cross-link:hover { background: rgba(93,202,165,0.12); }
+    .service-group + .service-group { margin-top: 4.5rem; }
+    .service-group .metric-grid { margin-top: 1.5rem; }
     .service-card { display: flex; flex-direction: column; }
-    .service-card ul { margin: 0.75rem 0 1rem 1.1rem; font-size: 0.95rem; }
+    .service-card .term { display: block; font-size: 0.8rem; color: var(--grey-muted); margin-top: 0.75rem; }
     .service-card .proof { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--grey-border); font-size: 0.88rem; color: var(--grey-muted); }
+    .service-card p + .proof, .service-card .term + .proof { margin-top: 1.25rem; }
     .service-card .proof a { color: var(--teal-dark); }
+    .who { font-size: 1rem; color: var(--grey-muted); margin-top: 1rem; }
     .steps { counter-reset: step; list-style: none; padding: 0; display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
     .steps li { counter-increment: step; }
     .steps li::before { content: counter(step); display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--teal); color: var(--white); font-weight: 700; margin-bottom: 0.75rem; }
@@ -47,17 +53,22 @@
     "name": "WristSkill Labs, LLC",
     "url": "https://wristskill.com/services",
     "email": "wristskillapp@gmail.com",
-    "founder": { "@type": "Person", "name": "Joseph Sharaya", "honorificSuffix": "OTD, OTR/L, CHT" },
+    "founder": { "@type": "Person", "name": "Joseph Sharaya" },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Services",
+      "name": "Video, web and app services",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-form video clipping", "description": "Long videos cut into vertical Reels, TikToks and YouTube Shorts with captions and hooks." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Websites built for search and AI answers", "description": "Fast static websites with SEO, AEO and GEO: structured data, social previews, sitemaps and llms.txt." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "On-device AI website assistant", "description": "A chat assistant that runs in the visitor's browser, grounded in your site's content." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile apps and App Store launch", "description": "iOS and Android apps in React Native/Expo or Unity, through store listing and review." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chrome extensions and web tools", "description": "Browser extensions and single-purpose web apps." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reference-checked health content", "description": "Clinical and patient-education writing in occupational therapy and hand therapy, with every citation checked against its source." } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-form video editing", "description": "Jobs, tips and before-and-afters cut into captioned Reels, TikToks and YouTube Shorts." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Trend and meme videos", "description": "On-trend short videos starring a character made for your brand." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand mascot and character art" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website design and build", "description": "Fast, mobile-friendly websites with contact forms, plus optional monthly updates." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing pages", "description": "One-page sites built to sell one product, offer or launch." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO, AEO and GEO", "description": "Helping a business show up in Google search and in AI answers like ChatGPT and Perplexity." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website chat assistant", "description": "A chat assistant that answers customer questions from your site's content and collects leads." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom web tools", "description": "Quote calculators, booking helpers and other single-purpose tools." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "iPhone and Android apps" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "App Store launch", "description": "Screenshots, preview videos, App Review, and in-app purchases and subscriptions." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chrome extensions" } }
       ]
     }
   }
@@ -87,96 +98,102 @@
 
   <header class="page-header">
     <div class="container-narrow">
+      <a class="cross-link" href="clinical">Clinician, clinic or school? See clinical services →</a><br>
       <span class="eyebrow">WristSkill Labs, LLC · Services</span>
-      <h1>I build it for my own products first. Then I can build it for yours.</h1>
-      <p class="lead">Short-form video, websites that get found, AI assistants, apps and extensions. Each service below links to something I've already shipped.</p>
-      <p><a href="#contact" class="btn btn-primary">Tell me about your project</a></p>
+      <h1>Videos, websites and apps for your business.</h1>
+      <p class="lead">You run the business. I make the videos, the website and the app that help people find you. I built all of this for my own products first, and every service below links to one.</p>
+      <p class="who">For plumbers, salons, restaurants, contractors, creators, startups — anyone.</p>
+      <p><a href="#contact" class="btn btn-primary">Get a quote</a></p>
     </div>
   </header>
 
   <section class="section section-cream">
     <div class="container">
-      <div class="section-head">
-        <h2>What I can do for you</h2>
+
+      <div class="service-group" id="video">
+        <div class="section-head">
+          <span class="eyebrow">Get seen</span>
+          <h2>Video</h2>
+        </div>
+        <div class="metric-grid">
+          <article class="metric-card service-card">
+            <h3>Short videos for your socials</h3>
+            <p>Send me your job-site clips, tips or long videos. I cut them into short, captioned Reels, TikToks and YouTube Shorts, ready to post.</p>
+            <p class="proof">Example: the Reels for Shower Tally and Jack Steel's Protein Tracker.</p>
+          </article>
+          <article class="metric-card service-card">
+            <h3>Trend and meme videos</h3>
+            <p>Funny, on-trend clips starring a character made for your brand, timed to the sound that's going around.</p>
+            <p class="proof">Example: the Shower Tally trend reels.</p>
+          </article>
+          <article class="metric-card service-card">
+            <h3>A mascot or character for your brand</h3>
+            <p>A cartoon character people remember, drawn in poses you can use on your site, your truck and your videos.</p>
+            <p class="proof">Example: Jack Steel, the mascot of <a href="/jack-steel/">Jack Steel's Protein Tracker</a>.</p>
+          </article>
+        </div>
       </div>
-      <div class="metric-grid">
 
-        <article class="metric-card service-card" id="video">
-          <span class="eyebrow">Content</span>
-          <h3>Short-form video clipping</h3>
-          <p>Turn a podcast, webinar, talk or long YouTube video into vertical clips for Reels, TikTok and YouTube Shorts.</p>
-          <ul>
-            <li>Picking the moments worth clipping</li>
-            <li>Vertical reframing, burned-in captions, hooks</li>
-            <li>Cuts timed to the music or the punchline</li>
-            <li>Batches ready to post, with captions written</li>
-          </ul>
-          <p class="proof">Shipped: the Reels for Shower Tally and Jack Steel's Protein Tracker.</p>
-        </article>
-
-        <article class="metric-card service-card" id="websites">
-          <span class="eyebrow">Web</span>
-          <h3>Websites built for Google and AI search</h3>
-          <p>Fast websites set up to be found by search engines (SEO) and quoted by AI answer engines like ChatGPT and Perplexity (AEO/GEO).</p>
-          <ul>
-            <li>Design, build and hosting setup</li>
-            <li>Structured data, social share cards, sitemaps, llms.txt</li>
-            <li>Pages written to answer the questions people actually ask</li>
-            <li>An SEO/AEO audit and fix list for a site you already have</li>
-          </ul>
-          <p class="proof">Shipped: <a href="/">this site</a>, including the <a href="/shower-tally/blog/">Shower Tally guides</a>.</p>
-        </article>
-
-        <article class="metric-card service-card" id="ai-assistant">
-          <span class="eyebrow">AI</span>
-          <h3>An AI assistant for your website</h3>
-          <p>A chat assistant that answers visitors' questions from your own content and passes you the leads they choose to send.</p>
-          <ul>
-            <li>Runs in the visitor's browser, so there's no per-message server bill</li>
-            <li>Conversations stay on the visitor's device</li>
-            <li>Drops into an existing site</li>
-          </ul>
-          <p class="proof">Shipped: the WristSkill Labs Assistant, running on this page (desktop browsers).</p>
-        </article>
-
-        <article class="metric-card service-card" id="apps">
-          <span class="eyebrow">Mobile</span>
-          <h3>Mobile apps and App Store launch</h3>
-          <p>iPhone and Android apps, from prototype through store review.</p>
-          <ul>
-            <li>React Native / Expo, or Unity for motion and game-like apps</li>
-            <li>In-app purchases and subscriptions</li>
-            <li>Store listing, screenshots, preview videos, privacy labels</li>
-            <li>Getting through App Review and TestFlight</li>
-          </ul>
-          <p class="proof">Shipped: <a href="/">WristSkill</a>, <a href="/shower-tally/">Shower Tally</a> and <a href="/jack-steel/">Jack Steel's Protein Tracker</a>.</p>
-        </article>
-
-        <article class="metric-card service-card" id="extensions">
-          <span class="eyebrow">Tools</span>
-          <h3>Chrome extensions and web tools</h3>
-          <p>A small tool that removes one annoying step from your team's day, or a browser game or interactive demo for your product.</p>
-          <ul>
-            <li>Chrome extensions (Manifest V3)</li>
-            <li>Single-purpose web apps and calculators</li>
-            <li>Browser games and try-it-now demos</li>
-          </ul>
-          <p class="proof">Shipped: AngleSnap, SlopShield, Promptello, <a href="/frozen-fortune/">Frozen Fortune</a> and the <a href="/jack-steel/try">Jack Steel demo</a>. See <a href="projects">Projects</a>.</p>
-        </article>
-
-        <article class="metric-card service-card" id="health-content">
-          <span class="eyebrow">Clinical</span>
-          <h3>Reference-checked health content</h3>
-          <p>Clinical guides, patient education and blog content in occupational therapy and hand therapy, written by a Certified Hand Therapist.</p>
-          <ul>
-            <li>Every citation checked against PubMed or Crossref</li>
-            <li>Each source checked to confirm it supports the sentence it's cited for</li>
-            <li>Review of content you've already written</li>
-          </ul>
-          <p class="proof">Shipped: the <a href="dtm">Dart Thrower's Motion guide</a> and <a href="research">the research page</a>.</p>
-        </article>
-
+      <div class="service-group" id="web">
+        <div class="section-head">
+          <span class="eyebrow">Get found</span>
+          <h2>Websites</h2>
+        </div>
+        <div class="metric-grid">
+          <article class="metric-card service-card">
+            <h3>A website that brings in customers</h3>
+            <p>Fast, easy to read on a phone, with a contact form that lands in your inbox. Monthly updates are available if you'd rather not touch it yourself.</p>
+            <p class="proof">Example: <a href="/">wristskill.com</a>, this site.</p>
+          </article>
+          <article class="metric-card service-card">
+            <h3>A landing page</h3>
+            <p>One page built to do one job: sell a product, fill a sign-up list or launch something new.</p>
+            <p class="proof">Example: the <a href="/jack-steel/">Jack Steel's Protein Tracker</a> page.</p>
+          </article>
+          <article class="metric-card service-card">
+            <h3>Show up on Google and in AI answers</h3>
+            <p>Help your business come up when someone searches, or asks ChatGPT, for what you do near them. For a new site or the one you already have.</p>
+            <span class="term">Also called SEO, AEO and GEO.</span>
+            <p class="proof">Example: the <a href="/shower-tally/blog/">Shower Tally guides</a>, written to answer the questions parents actually search.</p>
+          </article>
+          <article class="metric-card service-card">
+            <h3>A chat assistant on your site</h3>
+            <p>Answers customers' questions from your own website, any time of day, and passes you their contact details when they ask you to reach out. It runs in the visitor's browser, so there's no per-message AI bill. Works best on desktop today.</p>
+            <p class="proof">Example: the WristSkill Labs Assistant, on this page.</p>
+          </article>
+          <article class="metric-card service-card">
+            <h3>Custom tools</h3>
+            <p>A quote calculator, a booking helper, or another small tool that saves you or your customers a phone call.</p>
+            <p class="proof">Example: <a href="https://code-cht.github.io/prior-use-estimator/">Prior Use Estimator</a>.</p>
+          </article>
+        </div>
       </div>
+
+      <div class="service-group" id="apps">
+        <div class="section-head">
+          <span class="eyebrow">Go bigger</span>
+          <h2>Apps</h2>
+        </div>
+        <div class="metric-grid">
+          <article class="metric-card service-card">
+            <h3>iPhone and Android apps</h3>
+            <p>From first version to the app store, built to work on both platforms at once.</p>
+            <span class="term">React Native / Expo.</span>
+            <p class="proof">Examples: <a href="/shower-tally/">Shower Tally</a> and <a href="/jack-steel/">Jack Steel's Protein Tracker</a>.</p>
+          </article>
+          <article class="metric-card service-card">
+            <h3>App Store launch</h3>
+            <p>Store screenshots and preview videos, in-app purchases and subscriptions, TestFlight, and getting through Apple's review, including fixing a rejection.</p>
+            <p class="proof">Example: three apps launched on the App Store.</p>
+          </article>
+          <article class="metric-card service-card">
+            <h3>Chrome extensions</h3>
+            <p>A small add-on to the browser that removes a step from your team's day.</p>
+            <p class="proof">Examples: AngleSnap, SlopShield and Promptello. See <a href="projects">Projects</a>.</p>
+          </article>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -186,9 +203,9 @@
         <h2>How it works</h2>
       </div>
       <ol class="steps">
-        <li><h3>Tell me what you need</h3><p>Send the form below. A few sentences is plenty.</p></li>
-        <li><h3>Get a scoped quote</h3><p>I reply with what I'd build, what it costs and when you'd have it.</p></li>
-        <li><h3>Build and hand off</h3><p>You review as it comes together, and you get the files and logins at the end.</p></li>
+        <li><h3>Tell me what you need</h3><p>Fill out the form below. A few sentences is plenty.</p></li>
+        <li><h3>Get a quote</h3><p>I reply with what I'd make, what it costs and when you'd have it.</p></li>
+        <li><h3>I build it and hand it over</h3><p>You see it as it comes together. After final payment, the files, domain and accounts are yours.</p></li>
       </ol>
     </div>
   </section>
@@ -196,7 +213,7 @@
   <section class="section section-cream" id="contact">
     <div class="container-narrow">
       <div class="section-head">
-        <h2>Tell me about your project</h2>
+        <h2>Get a quote</h2>
         <p class="lead">Or email <a href="mailto:wristskillapp@gmail.com">wristskillapp@gmail.com</a>.</p>
       </div>
       <form class="inquiry-form" name="services" method="POST" data-netlify="true" netlify-honeypot="bot-field">
@@ -204,15 +221,29 @@
         <p hidden><label>Leave this empty <input name="bot-field"></label></p>
         <label>Name <input name="name" autocomplete="name" required></label>
         <label>Email <input type="email" name="email" autocomplete="email" required></label>
+        <label>Which describes you?
+          <select name="who">
+            <option>Local or service business</option>
+            <option>Creator</option>
+            <option>Startup or app</option>
+            <option>Healthcare or clinic</option>
+            <option>Other</option>
+          </select>
+        </label>
         <label>What do you need?
           <select name="service">
-            <option>Short-form video clipping</option>
-            <option>Website / SEO / AEO</option>
-            <option>AI assistant for my site</option>
-            <option>Mobile app</option>
-            <option>Chrome extension or web tool</option>
-            <option>Health content</option>
-            <option>Something else</option>
+            <option>Short videos</option>
+            <option>Trend or meme videos</option>
+            <option>Mascot or character</option>
+            <option>Website</option>
+            <option>Landing page</option>
+            <option>Google / AI search</option>
+            <option>Chat assistant</option>
+            <option>Custom tool</option>
+            <option>App</option>
+            <option>App Store launch</option>
+            <option>Chrome extension</option>
+            <option>Not sure yet</option>
           </select>
         </label>
         <label>Tell me a little more <textarea name="message" required></textarea></label>
@@ -253,6 +284,7 @@
           <ul>
             <li><a href="about">About</a></li>
             <li><a href="services">Services</a></li>
+            <li><a href="clinical">Clinical services</a></li>
             <li><a href="about#research-partners">Research partners</a></li>
             <li><a href="privacy">Privacy policy</a></li>
           </ul>

@@ -34,5 +34,6 @@ WristSkill (the app) measures wrist performance across six movement planes using
 
 ## Other
 
-- [Services](https://wristskill.com/services): what WristSkill Labs, LLC builds for clients — short-form video clipping, websites built for SEO and AEO, on-device AI website assistants, mobile apps and App Store launch, Chrome extensions and web tools, and reference-checked occupational and hand therapy content — each linked to a shipped example, with an inquiry form
+- [Services](https://wristskill.com/services): what WristSkill Labs, LLC makes for any business — short captioned videos for Reels, TikTok and Shorts, trend and meme videos, brand mascots, websites and landing pages with optional monthly updates, help showing up in Google and AI answers (SEO/AEO/GEO), an in-browser website chat assistant, custom web tools, iPhone and Android apps, App Store launch, and Chrome extensions; quotes on request
+- [Clinical services](https://wristskill.com/clinical): the Edema Management of the Upper Extremity continuing-education course (live on Zoom or booked for a clinic, school or group), reference-checked occupational and hand therapy writing, and custom clinical measurement tools
 - [Projects](https://wristskill.com/projects): portfolio of shipped software — iOS apps, Chrome extensions, and web tools
