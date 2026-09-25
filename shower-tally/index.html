@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shower Tally — The family shower tracker</title>
-  <meta name="description" content="Shower Tally is a fun, bubbly way for families to see who's showered and who's overdue. A digital replacement for the household whiteboard. Free on the App Store." />
+  <meta name="description" content="Shower Tally is a fun, bubbly way for families to see who's showered and who's overdue. A digital replacement for the household whiteboard. Free on iPhone and Android." />
   <link rel="canonical" href="https://wristskill.com/shower-tally/" />
 
   <!-- Open Graph / social preview -->
@@ -90,7 +90,7 @@
         "name": "Is my family's data private?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Your data is only visible to members of your family. We don't sell it. See our Privacy Policy for details."
+          "text": "Only people with your family code can see your board. We don't sell it. See our Privacy Policy for details."
         }
       }
     ]
@@ -264,6 +264,15 @@
     footer a { color: var(--ink); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
     footer .fine { font-size: 0.85rem; font-weight: 600; opacity: 0.8; }
+
+    /* Visitors who asked their device to reduce motion get a still page. */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .bubbles { display: none; }
+      .hero-art img { animation: none; }
+      .store-btn, .nav-links .cta { transition: none; }
+      .store-btn:hover, .nav-links .cta:hover { transform: none; }
+    }
   </style>
 </head>
 <body>
@@ -311,7 +320,7 @@
   <div class="wrap">
     <section aria-label="What is Shower Tally" style="padding: 0 0 10px;">
       <p class="section-sub" style="margin-bottom: 0; max-width: 60ch;">
-        Shower Tally is a family shower-tracking app for iPhone from WristSkill Labs, LLC.
+        Shower Tally is a family shower-tracking app for iPhone and Android from WristSkill Labs, LLC.
         Every person — and pet — in your household gets a card showing when they last showered
         and when they're next due, on a real-time board the whole family shares. The core
         tracker is free, with an optional Pro upgrade for the whole household. <a href="/shower-tally/what-is-shower-tally" style="color:var(--ink);font-weight:800">Read the full description &rarr;</a>
@@ -320,10 +329,10 @@
 
     <section id="features">
       <h2 class="section-title">Made for the whole household</h2>
-      <p class="section-sub">Glanceable, playful, and shareable. Adults find it funny, kids actually want to use it.</p>
+      <p class="section-sub">Glanceable, playful, and easy to share.</p>
       <div class="cards">
         <div class="card"><div class="emoji">👀</div><h3>See it at a glance</h3><p>Every family member gets a card. The top of the board counts who's overdue and who's fresh, so nobody slips through.</p></div>
-        <div class="card"><div class="emoji">🔔</div><h3>Gentle nudges</h3><p>Optional push alerts let everyone know when they're overdue. No more nagging — the duck does it for you.</p></div>
+        <div class="card"><div class="emoji">🔔</div><h3>Gentle nudges</h3><p>Anyone with the app on their own iPhone can get a reminder when they're overdue, and anyone can send a nudge. Less nagging from you.</p></div>
         <div class="card"><div class="emoji">🎉</div><h3>Satisfying to log</h3><p>Tap to log a shower and watch the bubbles burst. Streaks reward the family for staying fresh.</p></div>
         <div class="card"><div class="emoji">👨‍👩‍👧‍👦</div><h3>Real-time & shared</h3><p>Everyone in the family sees the same board instantly, synced across all your phones.</p></div>
         <div class="card"><div class="emoji">🐶</div><h3>Pets too</h3><p>Add the dog, cat, or hamster with their own weekly-to-monthly schedule. Bath day never sneaks up again.</p></div>
@@ -336,7 +345,7 @@
       <div class="steps">
         <div class="step"><div class="num"></div><h3>Make your family</h3><p>Create a family and add the people (and pets) who live under your roof.</p></div>
         <div class="step"><div class="num"></div><h3>Log the showers</h3><p>Anyone can tap a card when someone showers. The status updates automatically.</p></div>
-        <div class="step"><div class="num"></div><h3>Stay fresh</h3><p>Overdue cards turn coral, nudges go out, and the whole family stays on track.</p></div>
+        <div class="step"><div class="num"></div><h3>Stay fresh</h3><p>Overdue cards turn coral, and anyone in the family can send a nudge.</p></div>
       </div>
     </section>
 
@@ -364,7 +373,7 @@
             <li>Hair-wash tracking</li>
             <li>Custom schedule per person (1–7 days)</li>
             <li>Add pets 🐶 🐱 🐰</li>
-            <li>Personalized nudge alerts</li>
+            <li>Write your own nudge messages</li>
           </ul>
         </div>
       </div>
@@ -376,7 +385,7 @@
         <details><summary>Is Shower Tally really free?</summary><p>Yes. You can track one person and log showers for free, forever. Pro is an optional subscription that unlocks your whole household, the guided routine timer, hair-wash tracking, custom schedules, and pets.</p></details>
         <details><summary>What devices does it work on?</summary><p>Shower Tally is available for iPhone on the App Store and for Android on Google Play.</p></details>
         <details><summary>Does everyone in the family need the app?</summary><p>Anyone with the app can log showers for the whole household, so a shared board works even if only one parent has it installed. For personal nudges, each person installs it and joins the family.</p></details>
-        <details><summary>Is my family's data private?</summary><p>Your data is only visible to members of your family. We don't sell it. See our <a href="https://twilight-celestite-fdb.notion.site/Shower-Tally-Privacy-Policy-36ed96d65d8e8167a465d5d5c234eb56">Privacy Policy</a> for details.</p></details>
+        <details><summary>Is my family's data private?</summary><p>Only people with your family code can see your board. We don't sell it. See our <a href="https://twilight-celestite-fdb.notion.site/Shower-Tally-Privacy-Policy-36ed96d65d8e8167a465d5d5c234eb56">Privacy Policy</a> for details.</p></details>
       </div>
     </section>
 
