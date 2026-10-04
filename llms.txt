@@ -1,6 +1,6 @@
 # WristSkill
 
-> wristskill.com is the site of WristSkill Labs, LLC — the software practice of Joseph Sharaya, OTD, OTR/L, CHT, an occupational therapist and Certified Hand Therapist. It covers the WristSkill iPhone app for wrist proprioception assessment and training, clinician-written reference guides on wrist rehabilitation, the family apps Shower Tally, Frozen Fortune and Dad Bank (coming soon), and Jack Steel's Protein Tracker, a gamified protein tracker for iPhone.
+> wristskill.com is the site of WristSkill Labs LLC — the software practice of Joseph Sharaya, OTD, OTR/L, CHT, an occupational therapist and Certified Hand Therapist. It covers the WristSkill iPhone app for wrist proprioception assessment and training, clinician-written reference guides on wrist rehabilitation, the family apps Shower Tally, Frozen Fortune and Dad Bank (coming soon), and Jack Steel's Protein Tracker, a gamified protein tracker for iPhone.
 
 WristSkill (the app) measures wrist performance across six movement planes using iPhone tilt input — three metrics per plane: targets hit, time efficiency, and path efficiency. It is not a medical device, and its psychometric properties have not yet been published; validation studies are in development.
 
