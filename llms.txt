@@ -23,7 +23,7 @@ WristSkill (the app) measures wrist performance across six movement planes using
 - [When can kids shower alone?](https://wristskill.com/shower-tally/blog/when-can-kids-shower-alone): the AAP's minimum age for bathing alone, water-heater, scald and fall safety, an occupational therapist's readiness checklist, and a staged handover
 - [My teen won't shower](https://wristskill.com/shower-tally/blog/teen-wont-shower): why hygiene slips in adolescence (puberty, privacy, sleep, ADHD, sensory issues, depression), what helps without shaming, and when to call the pediatrician
 - [How often should older adults bathe?](https://wristskill.com/shower-tally/blog/how-often-should-older-adults-bathe): for family caregivers — no set number for older adults, what to wash between baths, bathroom safety and fall-prevention evidence, and when to involve a doctor or occupational therapist
-- [Frozen Fortune](https://wristskill.com/frozen-fortune/): a slushie-truck business game for kids 8–14, coming to iPhone and iPad
+- [Frozen Fortune](https://wristskill.com/frozen-fortune/): a slushie-truck business game for kids 8–14, for iPhone and iPad
 - [Dad Bank](https://wristskill.com/dad-bank/): coming soon for iPhone and Android — a pretend bank for kids, where parents keep a family ledger for allowance, interest and cash-outs; not a bank, no real money, no accounts, no servers
 
 ## Jack Steel's Protein Tracker
