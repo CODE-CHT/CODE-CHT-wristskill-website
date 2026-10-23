@@ -133,24 +133,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://wristskill.com/jack-steel/support</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://wristskill.com/jack-steel/privacy</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://wristskill.com/jack-steel/terms</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>https://wristskill.com/jack-steel/blog/</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>

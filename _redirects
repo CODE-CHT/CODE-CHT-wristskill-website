@@ -1,7 +1,24 @@
-# Dad Bank legal pages live in Notion (edit there, no deploy needed). WRI-344.
+# App legal pages live in Notion (edit there, no deploy needed).
+
+# Dad Bank (WRI-344)
 /dad-bank/privacy       https://twilight-celestite-fdb.notion.site/Dad-Bank-Privacy-Policy-3ebd96d65d8e810d9025cdb3f8220ec5   301!
 /dad-bank/privacy.html  https://twilight-celestite-fdb.notion.site/Dad-Bank-Privacy-Policy-3ebd96d65d8e810d9025cdb3f8220ec5   301!
 /dad-bank/terms         https://twilight-celestite-fdb.notion.site/3ebd96d65d8e81b5b7f7c527eabb8d40   301!
 /dad-bank/terms.html    https://twilight-celestite-fdb.notion.site/3ebd96d65d8e81b5b7f7c527eabb8d40   301!
 /dad-bank/support       https://twilight-celestite-fdb.notion.site/3ebd96d65d8e81e29776da115a280d87   301!
 /dad-bank/support.html  https://twilight-celestite-fdb.notion.site/3ebd96d65d8e81e29776da115a280d87   301!
+
+# Jack Steel (moved 2026-10-22)
+/jack-steel/privacy       https://twilight-celestite-fdb.notion.site/3b3d96d65d8e811ba2edd49e249b5a93  301!
+/jack-steel/privacy.html  https://twilight-celestite-fdb.notion.site/3b3d96d65d8e811ba2edd49e249b5a93  301!
+/jack-steel/terms         https://twilight-celestite-fdb.notion.site/401d96d65d8e81d1bd04d9e0b7b647e1  301!
+/jack-steel/terms.html    https://twilight-celestite-fdb.notion.site/401d96d65d8e81d1bd04d9e0b7b647e1  301!
+/jack-steel/support       https://twilight-celestite-fdb.notion.site/3bdd96d65d8e81ba86aff41ed39c8679  301!
+/jack-steel/support.html  https://twilight-celestite-fdb.notion.site/3bdd96d65d8e81ba86aff41ed39c8679  301!
+
+# Frozen Fortune (moved 2026-10-23)
+/frozen-fortune/privacy       https://twilight-celestite-fdb.notion.site/3fad96d65d8e8151b804f476aa2a5e4f  301!
+/frozen-fortune/privacy.html  https://twilight-celestite-fdb.notion.site/3fad96d65d8e8151b804f476aa2a5e4f  301!
+/frozen-fortune/support       https://twilight-celestite-fdb.notion.site/3fad96d65d8e81528b70cf0e3fdf519f  301!
+/frozen-fortune/support.html  https://twilight-celestite-fdb.notion.site/3fad96d65d8e81528b70cf0e3fdf519f  301!
+/frozen-fortune/help          https://twilight-celestite-fdb.notion.site/3fad96d65d8e81528b70cf0e3fdf519f  301!
