@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Frozen Fortune — run a slushie truck with Lotl</title>
-  <meta name="description" content="A business game for kids 8–14 with a free route to run every day. Real weather, real money, your decisions — and a full-summer mode for families who want more. Plays in the browser on phones, tablets, and Chromebooks.">
+  <meta name="description" content="Lotl the axolotl scored a slushie truck and needs a partner. A business game for kids 8–14 with a free route every day: real weather, real money, your decisions. Coming to iPhone and iPad.">
   <link rel="canonical" href="https://wristskill.com/frozen-fortune/">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Frozen Fortune — run a slushie truck with Lotl">
-  <meta property="og:description" content="Real weather. Real money. Your decisions. A business game for kids 8–14 with a free route every day — plays right in the browser.">
+  <meta property="og:description" content="Real weather. Real money. Your decisions. A business game for kids 8–14 with a free route every day. Coming to iPhone and iPad.">
   <meta property="og:url" content="https://wristskill.com/frozen-fortune/">
   <meta property="og:image" content="https://wristskill.com/frozen-fortune/card.png">
   <meta name="twitter:card" content="summary">
 
-  <link rel="icon" href="play/index.icon.png">
-  <link rel="apple-touch-icon" href="play/index.apple-touch-icon.png">
+  <link rel="icon" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,32 +88,19 @@
       font-size: 0.98rem;
     }
 
-    /* The one thing to do */
+    /* The one thing to know: where to get it */
     .play-wrap { padding: 26px 0 6px; text-align: center; }
-    .play-btn {
-      display: block;
-      width: 100%;
-      padding: 20px 24px;
+    .soon {
+      display: inline-block;
+      padding: 14px 28px;
       background: var(--amber);
       color: var(--ink);
       border: 3px solid var(--ink);
       border-radius: 16px;
-      box-shadow: 0 5px 0 var(--ink);
-      font-family: 'DM Sans', sans-serif;
-      font-size: clamp(1.25rem, 4.5vw, 1.55rem);
+      font-size: clamp(1.1rem, 4vw, 1.35rem);
       font-weight: 700;
-      letter-spacing: 0.02em;
-      text-decoration: none;
-      transition: transform 0.08s ease, box-shadow 0.08s ease;
     }
-    .play-btn:hover { transform: translateY(2px); box-shadow: 0 3px 0 var(--ink); }
-    .play-btn:active { transform: translateY(5px); box-shadow: 0 0 0 var(--ink); }
-    .play-btn:focus-visible { outline: 4px solid var(--teal); outline-offset: 3px; }
-    .play-note {
-      margin-top: 14px;
-      color: var(--soft);
-      font-size: 0.92rem;
-    }
+    .play-note { margin: 14px auto 0; max-width: 34em; color: var(--soft); font-size: 0.95rem; }
 
     /* Grown-ups card */
     .grownups {
@@ -146,74 +133,6 @@
     .grownups a:hover { text-decoration: underline; }
     .grownups a:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
 
-    /* How a grown-up buys: its own card straight under PLAY, so nobody has
-       to hunt for it. Dark button, not amber: it must never compete with
-       PLAY, the kid's button. Cream on ink is 11:1; ink on amber is 5.6:1. */
-    .unlock {
-      margin-top: 28px;
-      background: var(--card);
-      border: 3px solid var(--ink);
-      border-radius: 16px;
-      box-shadow: 0 5px 0 var(--ink);
-      padding: 22px 24px 20px;
-      text-align: center;
-    }
-    .unlock-kicker {
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--gill);
-    }
-    .unlock h2 {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-weight: 400;
-      font-size: clamp(1.6rem, 5vw, 2rem);
-      line-height: 1.15;
-      margin-top: 4px;
-      text-wrap: balance;
-    }
-    .unlock-lead { color: var(--soft); margin: 8px auto 0; max-width: 34em; font-size: 0.98rem; }
-    .buy-btn {
-      display: inline-block;
-      margin-top: 16px;
-      padding: 14px 32px;
-      background: var(--ink);
-      color: var(--cream);
-      border-radius: 12px;
-      font-size: 1.15rem;
-      font-weight: 700;
-      text-decoration: none;
-    }
-    .buy-btn:hover { background: #1d2226; }
-    .buy-btn:focus-visible { outline: 4px solid var(--teal); outline-offset: 3px; }
-    .unlock-steps {
-      list-style: none;
-      counter-reset: step;
-      display: grid;
-      gap: 8px;
-      margin: 18px auto 0;
-      max-width: 30em;
-      text-align: left;
-      font-size: 0.95rem;
-      color: var(--soft);
-    }
-    .unlock-steps li { counter-increment: step; padding-left: 36px; position: relative; }
-    .unlock-steps li::before {
-      content: counter(step);
-      position: absolute;
-      left: 0; top: 0;
-      width: 25px; height: 25px;
-      border-radius: 50%;
-      background: var(--amber);
-      color: var(--ink);
-      font-weight: 700;
-      font-size: 0.85rem;
-      display: grid;
-      place-items: center;
-    }
-    .unlock-steps strong { color: var(--ink); }
-
     footer {
       margin-top: 40px;
       border-top: 3px solid var(--ink);
@@ -238,10 +157,6 @@
       .hero { flex-direction: column-reverse; text-align: center; padding-top: 30px; }
       .hero img { width: clamp(120px, 34vw, 150px); }
       .foot-inner { flex-direction: column; text-align: center; }
-      .buy-btn { display: block; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .play-btn { transition: none; }
     }
   </style>
 </head>
@@ -260,62 +175,37 @@
     </section>
 
     <div class="play-wrap">
-      <a class="play-btn" href="play/">PLAY FROZEN FORTUNE</a>
-      <p class="play-note">Today's Route is free, every day · plays right in your browser · best in landscape<br>
-      On iPhone: <em>Add to Home Screen</em> for the full-screen view</p>
+      <p class="soon">Coming soon to iPhone and iPad</p>
+      <p class="play-note">Each morning, read the weather and the town schedule, stock the truck,
+      set your prices and pick your stops. The day's report shows what sold, what melted,
+      what gas cost, and who you missed.</p>
     </div>
-
-    <section class="unlock" id="unlock" aria-labelledby="unlock-title">
-      <p class="unlock-kicker">For grown-ups</p>
-      <h2 id="unlock-title">Unlock the full summer: $10, one time</h2>
-      <p class="unlock-lead">Today's Route stays free forever. A code opens the
-        14- and 28-day routes, plus the weekend route as often as you like.
-        No subscription.</p>
-      <a class="buy-btn" href="https://wristskilllabs.lemonsqueezy.com/checkout/buy/bd958002-fcb3-4c1f-81f0-85a699cc23b1">Buy a code · $10</a>
-      <ol class="unlock-steps">
-        <li><strong>Buy a code here.</strong> It arrives in your email right away.</li>
-        <li><strong>Open the game</strong> and tap <em>I have a code</em> on the route screen.</li>
-        <li><strong>Type it in.</strong> The full summer opens on that device, even offline.</li>
-      </ol>
-    </section>
 
     <section class="grownups">
       <h2>For grown-ups</h2>
       <ul>
         <li><span><strong>What's free, and what isn't.</strong> Today's Route —
-          a fresh daily challenge, the same day for everyone playing — is free,
-          every day, no strings. New players also get one free practice weekend
-          (a short 3-day route). The full summer — the 14- and 28-day routes,
-          plus the weekend route as often as you like — is a one-time $10 unlock:
-          <a href="https://wristskilllabs.lemonsqueezy.com/checkout/buy/bd958002-fcb3-4c1f-81f0-85a699cc23b1">buy a code</a>
-          and type it into the game. The code never expires and works offline.
-          No subscription, and never a real price or a checkout on the kid's
-          screen — the game tells them to ask a grown-up.</span></li>
+          a fresh daily challenge — is free every day. New players also get one
+          free practice weekend (a short 3-day route). The Full Summer — the 14-
+          and 28-day routes, plus the weekend route as often as you like — is a
+          one-time purchase through the App Store. Nothing to renew or cancel.</span></li>
+        <li><span><strong>A grown-up stays in charge of buying.</strong> A grown-up
+          question appears before the purchase screen, and families can use
+          Ask to Buy.</span></li>
         <li><span><strong>Nothing to sign up for, nothing collected.</strong>
-          No ads, no accounts, no tracking — progress saves only on this device.
-          Checkout happens on our store page, never inside the game.</span></li>
-        <li><span><strong>Progress stays in this browser.</strong> The summer
-          saves itself after every day, in this browser on this device — there
-          is no account and no copy anywhere to restore from. Clearing your
-          browser's cookies and site data erases it, and a private or incognito
-          window forgets everything when it closes.</span></li>
-        <li><span><strong>Works where kids are.</strong> Phones and tablets in
-          landscape, plus laptops and Chromebooks — any modern browser.</span></li>
+          No accounts, no ads, no analytics, no tracking. Progress saves only on
+          the device.</span></li>
         <li><span><strong>The math is real.</strong> Costs, prices, weather, and
           profit add up honestly — and a bad day is a lesson, never a punishment.</span></li>
-        <li><span><strong>On iPhone and iPad, add it to the Home Screen.</strong>
-          Open the game, then choose <em>Add to Home Screen</em> in the share
-          menu. It installs with its own icon and works offline — and it is the
-          one way to keep a long summer safe, because Safari deletes a
-          website's stored data after about seven days of not visiting it. A
-          Home Screen app is exempt from that.</span></li>
       </ul>
     </section>
   </main>
 
   <footer>
     <div class="foot-inner">
-      <p>Made by <a href="https://wristskill.com">WristSkill Labs</a></p>
+      <p>Made by <a href="https://wristskill.com">WristSkill Labs</a> ·
+        <a href="/frozen-fortune/privacy">Privacy</a> ·
+        <a href="/frozen-fortune/support">Help</a></p>
       <p>Spotted a bug or have an idea?
         <a href="mailto:admin@wristskill.com?subject=Frozen%20Fortune%20feedback">admin@wristskill.com</a></p>
     </div>

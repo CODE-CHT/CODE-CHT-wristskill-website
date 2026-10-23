@@ -1,30 +1,9 @@
 # Netlify custom headers.
 #
-# Keep the playable build out of search results until launch (WRI-184).
-#
-# X-Robots-Tag rather than a robots.txt Disallow, on purpose: a disallowed URL
-# can still be indexed when something links to it, and blocking the crawl stops
-# Google ever seeing a noindex. The header is fetched with the page, so it
-# actually works. It also survives a Godot re-export, which regenerates
-# play/index.html and would silently wipe a <meta name="robots"> tag.
-#
-# The landing page at /frozen-fortune/ is deliberately NOT covered — that one
-# is marketing and should be found.
-/frozen-fortune/play/*
-  X-Robots-Tag: noindex, nofollow
-
-# The game's service worker must never come from cache. Godot's shell
-# registers this exact file, so it is the only door a new build can reach a
-# returning player through — a cached one serves them the old game forever.
-# Every local playtest this week needed a brand-new port for exactly this
-# reason, and a stale worker in production is a deploy nobody can see.
-/frozen-fortune/play/index.service.worker.js
-  Cache-Control: public, max-age=0, must-revalidate
-
 # The Functional Goals PDF is the same words as /functional-goals, rendered for
 # print. It is a handout to attach to an email, not a second page to rank — and
-# an indexed duplicate would compete with the page it came from. Same reasoning
-# as the block above: a header travels with the file, a robots.txt Disallow does
+# an indexed duplicate would compete with the page it came from. An X-Robots-Tag
+# header travels with the file; a robots.txt Disallow does
 # not stop an indexed URL.
 /functional-goals.pdf
   X-Robots-Tag: noindex
