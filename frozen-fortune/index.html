@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Frozen Fortune — run your own ice-cream truck</title>
+  <title>Frozen Fortune — run a slushie truck with Lotl</title>
   <meta name="description" content="A business game for kids 8–14 with a free route to run every day. Real weather, real money, your decisions — and a full-summer mode for families who want more. Plays in the browser on phones, tablets, and Chromebooks.">
   <link rel="canonical" href="https://wristskill.com/frozen-fortune/">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Frozen Fortune — run your own ice-cream truck">
+  <meta property="og:title" content="Frozen Fortune — run a slushie truck with Lotl">
   <meta property="og:description" content="Real weather. Real money. Your decisions. A business game for kids 8–14 with a free route every day — plays right in the browser.">
   <meta property="og:url" content="https://wristskill.com/frozen-fortune/">
   <meta property="og:image" content="https://wristskill.com/frozen-fortune/card.png">
@@ -27,7 +27,7 @@
       --card:  #fffdf4;
       --ink:   #2f3439;
       --soft:  #6d6455;
-      --rosa:  #c22f3e;
+      --gill:  #b8461a;   /* Lotl's orange gills, darkened for text on cream */
       --amber: #d9a441;
       --teal:  #1f9e8e;
     }
@@ -42,11 +42,11 @@
       flex-direction: column;
     }
 
-    /* Parlor awning */
+    /* Truck awning */
     .awning {
       height: 18px;
       background: repeating-linear-gradient(90deg,
-        var(--rosa) 0 44px, var(--cream) 44px 88px);
+        var(--teal) 0 44px, var(--cream) 44px 88px);
       border-bottom: 3px solid var(--ink);
     }
 
@@ -74,7 +74,7 @@
       font-weight: 400;
       font-size: clamp(2.6rem, 8vw, 3.6rem);
       line-height: 1.02;
-      color: var(--rosa);
+      color: var(--gill);
       text-wrap: balance;
     }
     .tagline {
@@ -163,7 +163,7 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--rosa);
+      color: var(--gill);
     }
     .unlock h2 {
       font-family: 'Instrument Serif', Georgia, serif;
@@ -252,11 +252,11 @@
     <section class="hero">
       <div class="hero-words">
         <h1>Frozen Fortune</h1>
-        <p class="tagline">Run your own ice-cream truck for one summer.</p>
+        <p class="tagline">Lotl the axolotl scored a slushie truck. He needs a partner to run it. You in?</p>
         <p class="pitch">Real weather. Real money. Your decisions. A business game
         for kids 8–14, inspired by the classic 1990s classroom business sims.</p>
       </div>
-      <img src="rosa.png" alt="Grandma Rosa — a smiling strawberry-sundae grandmother with glasses, a silver bun, and a cherry on top" width="400" height="747">
+      <img src="lotl.png" alt="Lotl, a smiling teal axolotl with orange gills, in a navy hoodie, jeans and white sneakers" width="340" height="640">
     </section>
 
     <div class="play-wrap">
