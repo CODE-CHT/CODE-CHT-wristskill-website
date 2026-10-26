@@ -1,5 +1,8 @@
 # App legal pages live in Notion (edit there, no deploy needed).
 
+# WristSkill app + site privacy (moved 2026-10-26)
+/privacy       https://twilight-celestite-fdb.notion.site/405d96d65d8e810e85b7ed0b3d1e1254  301!
+/privacy.html  https://twilight-celestite-fdb.notion.site/405d96d65d8e810e85b7ed0b3d1e1254  301!
 # Dad Bank (WRI-344)
 /dad-bank/privacy       https://twilight-celestite-fdb.notion.site/Dad-Bank-Privacy-Policy-3ebd96d65d8e810d9025cdb3f8220ec5   301!
 /dad-bank/privacy.html  https://twilight-celestite-fdb.notion.site/Dad-Bank-Privacy-Policy-3ebd96d65d8e810d9025cdb3f8220ec5   301!
