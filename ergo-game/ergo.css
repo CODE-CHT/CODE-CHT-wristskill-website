@@ -1,4 +1,8 @@
 /* Ergo game landing page. Basecamp direction: pine, trail-blaze gold, lichen. */
+
+/* Self-hosted (OFL, Google Fonts latin subset, variable weight) so no visitor data goes to Google */
+@font-face { font-family: "Overpass"; src: url("fonts/overpass-latin.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Nunito"; src: url("fonts/nunito-latin.woff2") format("woff2"); font-weight: 200 1000; font-display: swap; }
 :root {
   --pine: #17362b;
   --spruce: #2f5d4a;
@@ -110,3 +114,4 @@ footer { padding: 32px 0 40px; font-size: 0.9375rem; color: var(--granite); }
 footer .links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 8px; }
 
 .doc { padding: 48px 0 80px; }
+.doc h2 { font-size: 1.5rem; margin-top: 1.6em; }
