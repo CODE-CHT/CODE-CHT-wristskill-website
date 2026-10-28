@@ -26,6 +26,9 @@ a { color: var(--spruce); text-underline-offset: 0.15em; }
 
 .wrap { width: min(1080px, 100% - 32px); margin-inline: auto; }
 .measure { max-width: 64ch; }
+/* On a .wrap, keep the shared left edge and narrow the children instead */
+.wrap.measure { max-width: none; }
+.wrap.measure > * { max-width: 64ch; }
 
 h1, h2, h3 { font-family: var(--display); line-height: 1.1; margin: 0 0 0.5em; }
 h1 { font-size: clamp(2.25rem, 6vw, 3.75rem); font-weight: 800; letter-spacing: -0.02em; }
