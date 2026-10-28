@@ -203,5 +203,11 @@
       <p>A WristSkill Labs product. © 2026 WristSkill Labs, LLC.</p>
     </footer>
   </div>
+  <script>
+    // Show the request is on its way and block double taps; the form still works without JS.
+    const pilotForm = document.querySelector("form.pilot"), pilotBtn = pilotForm.querySelector("button");
+    pilotForm.addEventListener("submit", () => { pilotBtn.disabled = true; pilotBtn.textContent = "Sending…"; });
+    addEventListener("pageshow", () => { pilotBtn.disabled = false; pilotBtn.textContent = "Request a pilot"; });
+  </script>
 </body>
 </html>
