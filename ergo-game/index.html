@@ -88,7 +88,7 @@
         <ol class="steps">
           <li>
             <h3>An invite in Microsoft Teams</h3>
-            <p>People join from a message in Teams, with nothing to install on their computer. Slack is planned for later.</p>
+            <p>Your Teams admin approves the app once. After that, people join from a message in Teams, with nothing to install on their computer. Slack is planned for later.</p>
           </li>
           <li>
             <h3>A 10-minute setup quest</h3>
@@ -153,6 +153,8 @@
     <section class="wrap request" id="request">
       <h2>Request a pilot</h2>
       <p class="measure">Tell us about your team, and we'll reply by email.</p>
+      <!-- Paste the Google Form link into href, then remove "hidden". -->
+      <p class="measure" hidden>Not ready for a pilot? <a href="GOOGLE_FORM_URL">Answer 5 quick questions</a> instead.</p>
       <form class="pilot" name="ergo-game-pilot" method="POST" action="/ergo-game/thanks" data-netlify="true" netlify-honeypot="website">
         <input type="hidden" name="form-name" value="ergo-game-pilot" />
         <p hidden><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off" /></label></p>
