@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Desk-Setup Game for Remote Teams | WristSkill Labs</title>
+  <meta name="description" content="A team game for remote and hybrid desk staff: employees set up their workstations one mission at a time and take short movement breaks, and HR sees participation only. Now taking pilot requests." />
+  <!-- noindex until the product has its real name; shared by link only, not in sitemap.xml -->
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="https://wristskill.com/ergo-game/" />
+  <meta name="theme-color" content="#17362B" />
+  <meta property="og:title" content="A desk-setup game for remote teams" />
+  <meta property="og:description" content="Your stipend bought the chair. This helps your team set it up, then keeps it that way. HR sees participation, never health data." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wristskill.com/ergo-game/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Nunito:wght@400;700;800&display=swap" />
+  <link rel="stylesheet" href="/ergo-game/ergo.css" />
+</head>
+<body>
+  <div class="pine">
+    <div class="wrap">
+      <nav>
+        <a class="brand" href="/ergo-game/">WristSkill Labs</a>
+        <a class="nav-cta" href="#request">Request a pilot</a>
+      </nav>
+
+      <header class="hero">
+        <div>
+          <p class="status">In development. Now taking pilot requests from US teams.</p>
+          <h1>Your stipend bought the chair. Now get it set up.</h1>
+          <p class="lede">A team game for remote and hybrid desk staff. Each person fixes their workstation one mission at a time and takes short movement breaks. Every fix moves the whole team along a shared expedition map.</p>
+          <p class="lede">HR sees participation. Nobody's health data goes to the employer.</p>
+          <a class="nav-cta" href="#request">Request a pilot</a>
+        </div>
+
+        <svg class="map" viewBox="0 0 480 420" role="img" aria-labelledby="map-title">
+          <title id="map-title">Trail map: the team's route from basecamp through six stops (chair, keyboard, monitor, laptop, light, move) to the summit</title>
+          <defs>
+            <mask id="trail-reveal">
+              <path class="reveal" pathLength="900" d="M40 395 Q60 370 70 360 Q120 320 170 300 Q190 260 120 215 Q160 175 230 170 Q290 170 330 215 Q400 200 380 100 L420 55" />
+            </mask>
+          </defs>
+          <path class="contour" d="M300 40 C380 30 450 70 455 140 C460 220 400 270 320 265 C240 262 200 210 210 140 C218 80 240 48 300 40Z" />
+          <path class="contour" d="M305 80 C360 74 410 100 412 145 C414 195 370 225 318 222 C268 220 245 188 250 145 C255 105 268 84 305 80Z" />
+          <path class="contour" d="M312 118 C345 114 372 128 372 150 C372 176 348 188 322 186 C296 184 285 168 288 150 C291 130 296 120 312 118Z" />
+          <path class="contour" d="M30 300 C80 250 150 240 200 262 C250 286 250 340 200 372 C150 404 60 410 30 380 C10 360 12 320 30 300Z" />
+          <path class="contour" d="M70 312 C110 286 160 286 186 304 C212 324 205 352 170 366 C130 382 80 376 62 356 C48 340 52 324 70 312Z" />
+
+          <g mask="url(#trail-reveal)">
+            <path class="trail" d="M40 395 Q60 370 70 360 Q120 320 170 300 Q190 260 120 215 Q160 175 230 170 Q290 170 330 215 Q400 200 380 100 L420 55" />
+          </g>
+
+          <path d="M24 404 L40 378 L56 404Z" fill="#8fae9b" />
+          <line x1="420" y1="58" x2="420" y2="22" stroke="#eef2ee" stroke-width="3" />
+          <path d="M421 22 L446 30 L421 38Z" fill="#f2b705" />
+
+          <g>
+            <circle cx="70" cy="360" r="16" fill="#f2b705" /><text class="num" x="70" y="365">1</text><text x="94" y="366">Chair</text>
+            <circle cx="170" cy="300" r="16" fill="#f2b705" /><text class="num" x="170" y="305">2</text><text x="194" y="306">Keyboard</text>
+            <circle cx="120" cy="215" r="16" fill="#f2b705" /><text class="num" x="120" y="220">3</text><text x="96" y="221" text-anchor="end">Monitor</text>
+            <circle cx="230" cy="170" r="16" fill="#f2b705" /><text class="num" x="230" y="175">4</text><text x="230" y="142" text-anchor="middle">Laptop</text>
+            <circle cx="330" cy="215" r="16" fill="#f2b705" /><text class="num" x="330" y="220">5</text><text x="354" y="221">Light</text>
+            <circle cx="380" cy="100" r="16" fill="#f2b705" /><text class="num" x="380" y="105">6</text><text x="356" y="106" text-anchor="end">Move</text>
+          </g>
+        </svg>
+      </header>
+    </div>
+  </div>
+
+  <main>
+    <section class="band">
+      <div class="wrap measure">
+        <h2>Most home-office setups never get checked</h2>
+        <p>Plenty of companies pay for home-office gear. Far fewer check how it ends up set up. Gallagher, the insurance broker, <a href="https://www.ajg.com/news-and-insights/ergonomics-for-employees-working-from-home/">has written</a> that cash stipends tend to buy quick, cheap fixes.</p>
+        <p>Meanwhile the wellness tools people stop opening are the ones that get cut at renewal. A setup check that happens once and is forgotten has the same problem.</p>
+      </div>
+    </section>
+
+    <section class="band" id="how">
+      <div class="wrap">
+        <div class="measure">
+          <h2>How it works</h2>
+          <p class="muted">This is what the pilot version is being built to do.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <h3>An invite in Microsoft Teams</h3>
+            <p>People join from a message in Teams, with nothing to install on their computer. Slack is planned for later.</p>
+          </li>
+          <li>
+            <h3>A 10-minute setup quest</h3>
+            <p>Chair, keyboard and mouse, monitor, laptop and lighting. Each mission says what to check, how to fix it with what you already have, and what to buy if that doesn't work.</p>
+          </li>
+          <li>
+            <h3>A check-in three days later</h3>
+            <p>"Still comfortable?" If the fix held, the mission is complete. If it didn't, the game offers a different fix.</p>
+          </li>
+          <li>
+            <h3>Short breaks on one shared map</h3>
+            <p>One or two movement breaks a day, each under two minutes, with an easier version and a skip that still counts. Everyone's progress moves the team across the same map. Goals are weekly, so a missed day costs nothing, and there is no individual leaderboard.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="band" id="hr">
+      <div class="wrap">
+        <div class="measure">
+          <h2>What HR can see</h2>
+          <p>Employees can open the same list inside the game, so they know exactly what their employer gets.</p>
+        </div>
+        <div class="ledger">
+          <div class="sees">
+            <h3>HR sees</h3>
+            <ul>
+              <li>How many people were invited, signed up, and took part each week</li>
+              <li>Team totals, and only for groups of 5 or more people</li>
+            </ul>
+          </div>
+          <div class="never">
+            <h3>HR doesn't see</h3>
+            <ul>
+              <li>Any one person's answers, setup or progress</li>
+              <li>Pain or symptom reports. The game doesn't ask health questions, and its "this hurts" button gives private advice and logs nothing.</li>
+              <li>Camera, keystroke or screen activity. None of those are part of the design.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="pricing">
+      <div class="wrap measure">
+        <h2>Pricing</h2>
+        <p class="price">$18 per person per year</p>
+        <p>Billed yearly, with a $1,000 annual minimum. Sold to employers in the US as a standalone benefit.</p>
+        <p>The pilot is free for 30 days with one team. After that it becomes a paid plan, or it ends.</p>
+      </div>
+    </section>
+
+    <section class="band" id="who">
+      <div class="wrap measure">
+        <h2>Who's building it</h2>
+        <p>Joseph Sharaya, an occupational therapist and certified hand therapist, at WristSkill Labs. The setup missions follow published workstation guidance, including OSHA's <a href="https://www.osha.gov/etools/computer-workstations">Computer Workstations eTool</a>. The game is a wellness tool for workstation setup and movement breaks. It isn't medical care or a treatment.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="pine">
+    <section class="wrap request" id="request">
+      <h2>Request a pilot</h2>
+      <p class="measure">Tell us about your team, and we'll reply by email.</p>
+      <form class="pilot" name="ergo-game-pilot" method="POST" action="/ergo-game/thanks" data-netlify="true" netlify-honeypot="website">
+        <input type="hidden" name="form-name" value="ergo-game-pilot" />
+        <p hidden><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off" /></label></p>
+        <div class="pair">
+          <label>Your name <input type="text" name="name" required autocomplete="name" /></label>
+          <label>Work email <input type="email" name="email" required autocomplete="email" /></label>
+        </div>
+        <div class="pair">
+          <label>Company <input type="text" name="company" required autocomplete="organization" /></label>
+          <label>Number of employees
+            <select name="employees" required>
+              <option value="">Choose one</option>
+              <option>Under 50</option>
+              <option>50–200</option>
+              <option>201–500</option>
+              <option>501–1,000</option>
+              <option>Over 1,000</option>
+            </select>
+          </label>
+        </div>
+        <label>Where does your team chat?
+          <select name="chat" required>
+            <option value="">Choose one</option>
+            <option>Microsoft Teams</option>
+            <option>Slack</option>
+            <option>Both</option>
+            <option>Something else</option>
+          </select>
+        </label>
+        <label><span>Anything we should know? <span class="opt">(optional)</span></span>
+          <textarea name="note" rows="4"></textarea>
+        </label>
+        <p class="fine">Please don't include anyone's health information. We use these details only to reply about a pilot. To have them deleted, email <a href="mailto:admin@wristskill.com">admin@wristskill.com</a>.</p>
+        <button type="submit">Request a pilot</button>
+      </form>
+    </section>
+
+    <footer class="wrap">
+      <div class="links">
+        <a href="/">wristskill.com</a>
+        <a href="mailto:admin@wristskill.com">Contact</a>
+      </div>
+      <p>A WristSkill Labs product. © 2026 WristSkill Labs, LLC.</p>
+    </footer>
+  </div>
+</body>
+</html>
